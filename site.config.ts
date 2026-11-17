@@ -30,7 +30,7 @@ export const site = {
 
   links: {
     youtube: "https://www.youtube.com/@check-itchurch",
-    kidsChannel: "https://www.youtube.com/@check-itchurch", // TODO: swap for Check It Kids channel link from Juna
+    kidsChannel: "https://www.youtube.com/@checkitkids-b1o",
     instagram: "https://www.instagram.com/checkitchurchministries/",
     tiktok: "https://www.tiktok.com/@checkitchurchministries",
     facebook: "#",
