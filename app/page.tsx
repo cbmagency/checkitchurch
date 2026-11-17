@@ -37,7 +37,7 @@ export default function Home() {
         </a>
 
         <div className="bar">
-          <Link className="pill" href="/new-here">Plan your visit</Link>
+          <Link className="pill" href="/new-here">New here</Link>
           <Link className="pill" href="/watch">Watch live</Link>
           <JoinButton className="pill">Become a member</JoinButton>
           <Link className="pill" href="/give">Give</Link>

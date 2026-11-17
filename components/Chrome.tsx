@@ -41,8 +41,8 @@ export function Footer() {
       <div className="wrap">
         <div className="pair">
           <div className="reveal">
-            <p className="d d-lg">{site.shortName}<br /><span className="blue">In-person</span></p>
-            <div style={{ marginTop: 18 }}><Link className="pill" href="/new-here">Plan your visit</Link></div>
+            <p className="d d-lg">{site.shortName}<br /><span className="blue">Family</span></p>
+            <div style={{ marginTop: 18 }}><Link className="pill" href="/new-here#membership">Become a member</Link></div>
           </div>
           <div className="reveal">
             <p className="d d-lg">{site.shortName}<br /><span className="blue">Online</span></p>
@@ -81,7 +81,6 @@ export function Footer() {
               <a href={site.contact.phoneHref}>{site.contact.phone}</a>
               <a href={`mailto:${site.contact.email}`} style={{ textTransform: "none" }}>{site.contact.email}</a>
               <span>WhatsApp: {site.contact.whatsapp}</span>
-              <span style={{ lineHeight: 1.4 }}>{site.contact.address}</span>
             </div>
           </div>
         </div>

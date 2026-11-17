@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { site } from "@/site.config";
 import { Faq, PageHero, Photo } from "@/components/Blocks";
+import { sendForm } from "@/components/Member";
 
 export default function About() {
   const [sent, setSent] = useState(false);
@@ -17,7 +18,7 @@ export default function About() {
       <section className="wrap section">
         <div className="grid g2" style={{ alignItems: "end" }}>
           <h2 className="d d-lg">One family.<br /><span className="blue">Many nations.</span></h2>
-          <p className="lead">From the Caribbean to the States and around the world, Check It is a house where people encounter God and find their people. In the room or online, you belong here.</p>
+          <p className="lead">From the Caribbean to the States and around the world, Check It is a house where people encounter God and find their people. Wherever you are, you belong here.</p>
         </div>
         <div className="grid g3" style={{ marginTop: 40 }}>
           {[["Word.", "Bible teaching that's clear, practical and built for real life."], ["Worship.", "Spirit-filled, wholehearted, never on autopilot."], ["Miracles.", "We believe God still heals, delivers and breaks through."]].map(([t, d], i) => (
@@ -87,7 +88,13 @@ export default function About() {
             {sent ? (
               <p className="d d-sm">We&apos;re praying with you.</p>
             ) : (
-              <form style={{ display: "flex", flexDirection: "column", gap: 14 }} onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+              <form style={{ display: "flex", flexDirection: "column", gap: 14 }} onSubmit={async (e) => {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>;
+                if (site.forms.web3formsKey) await sendForm(site.forms.web3formsKey, "Prayer request: " + data.name, data);
+                else window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent("Prayer request")}&body=${encodeURIComponent(Object.entries(data).map(([k, v]) => `${k}: ${v}`).join("\n"))}`;
+                setSent(true);
+              }}>
                 <label className="field">Name<input name="name" required /></label>
                 <label className="field">Email or phone<input name="contact" /></label>
                 <label className="field">How can we pray for you?<textarea name="request" rows={4} required /></label>

@@ -10,7 +10,7 @@ export const site = {
   slogan: "Until all see His Kingdom.",
   tagline: "Word. Worship. Miracles.",
   description:
-    "Check It Church Ministries International: proclaiming the Kingdom of God through the Word, worship and miracles. Sundays at 10 AM, in person and online.",
+    "Check It Church Ministries International: proclaiming the Kingdom of God through the Word, worship and miracles. Live online every Sunday at 10 AM on YouTube and Facebook.",
   url: "https://checkitcm.org",
 
   theme: {
@@ -25,7 +25,6 @@ export const site = {
     email: "info@checkitcm.org",
     phoneHref: "tel:+18558124325",
     whatsapp: "[WhatsApp number]",
-    address: "[Street address, City, State]",
     timezone: "Central",
   },
 
@@ -49,7 +48,7 @@ export const site = {
   ],
 
   services: [
-    { day: "Sunday", time: "10 AM", name: "Super Sunday Service", where: "In person + live", featured: true },
+    { day: "Sunday", time: "10 AM", name: "Super Sunday Service", where: "Live on YouTube + Facebook", featured: true },
     { day: "Tuesday", time: "6 PM", name: "Healing & Deliverance", where: "Live online" },
     { day: "Wednesday", time: "6 PM", name: "Bible Study", where: "Live online" },
     { day: "Friday", time: "6 PM", name: "Friday Night Prayer", where: "Live online" },
@@ -82,10 +81,11 @@ export const site = {
     { title: "Stay connected", text: "Need to update your details? Email info@checkitcm.org." },
   ],
 
-  // Where form submissions go. Paste a webhook (GoHighLevel, Formspree, Zapier) to collect them.
-  // Left empty, the membership form opens a pre-filled email to contact.email instead.
+  // Form delivery via Web3Forms (free, 250/mo): every submission is emailed to the inbox
+  // the key was created with. Get a key at web3forms.com using info@checkitcm.org.
+  // Left empty, forms fall back to opening a pre-filled email to contact.email.
   forms: {
-    membershipEndpoint: "",
+    web3formsKey: "",
   },
 
   // Recent sermons row. id = the YouTube video id (the part after watch?v=).

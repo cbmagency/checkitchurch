@@ -3,6 +3,16 @@
 import { createContext, useContext, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { site } from "@/site.config";
 
+/** Shared form delivery (Web3Forms). Used by membership + prayer forms. */
+export async function sendForm(key: string, subject: string, data: Record<string, string>) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: key, subject, from_name: site.name, ...data }),
+  });
+  if (!res.ok) throw new Error("Form failed");
+}
+
 const Ctx = createContext<{ open: () => void }>({ open: () => {} });
 
 function YesNo({ name, value, onChange }: { name: string; value: string; onChange: (v: string) => void }) {
@@ -24,11 +34,11 @@ function MemberForm({ onDone }: { onDone: () => void }) {
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>;
-    const endpoint = site.forms.membershipEndpoint;
+    const key = site.forms.web3formsKey;
     setBusy(true);
     try {
-      if (endpoint) {
-        await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form: "membership", ...data }) });
+      if (key) {
+        await sendForm(key, "Membership registration: " + (data["Full name"] || ""), data);
       } else {
         // No webhook configured yet: hand off a pre-filled email to the church inbox.
         const body = Object.entries(data).map(([k, v]) => `${k}: ${v}`).join("\n");
