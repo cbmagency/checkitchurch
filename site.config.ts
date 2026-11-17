@@ -14,10 +14,10 @@ export const site = {
   url: "https://checkitcm.org",
 
   theme: {
-    ink: "#111111", // headings + body text
+    ink: "#141414", // headings + body text
     primary: "#2B3990", // single accent: logo blue
     secondary: "#2B3990", // same blue (one-accent system)
-    bg: "#FAFAFC",
+    bg: "#F3F2EE", // paper
   },
 
   contact: {

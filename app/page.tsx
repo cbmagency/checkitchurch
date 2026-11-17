@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/site.config";
 import { JoinButton } from "@/components/Member";
@@ -7,33 +8,47 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="wrap center" style={{ paddingTop: 48 }}>
-        <p className="label red">{site.name}</p>
-        <h1 className="d d-xl">Until all see<br /><span className="red">His Kingdom.</span></h1>
-        <p className="lead" style={{ margin: "22px auto 0", maxWidth: 560 }}>
-          Come see what the Lord has done. Sundays at 10 AM, in person and online.
-        </p>
-        <div className="btns" style={{ justifyContent: "center", marginTop: 28 }}>
-          <Link className="pill p-red" href="/new-here">Plan a Visit</Link>
-          <Link className="pill p-out" href="/watch">Watch Live</Link>
+      <section className="wrap hero">
+        <div className="shot s1 frame drift r-land"><Image src="/images/worship.jpg" alt="The Check It congregation in worship" fill priority sizes="430px" /></div>
+        <div className="shot s2 frame drift r-port"><Image src="/images/arms.jpg" alt="A member worshipping with arms raised" fill sizes="290px" style={{ objectPosition: "50% 25%" }} /></div>
+        <h1 className="d d-hero" style={{ paddingTop: "clamp(40px, 8vw, 120px)" }}>Until all<br />see His<br /><span className="red">Kingdom.</span></h1>
+        <div className="side" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 32, marginTop: 40 }}>
+          <div className="btns">
+            <Link className="pill" href="/new-here">Plan your visit</Link>
+            <Link className="pill" href="/watch">Watch online</Link>
+            <JoinButton className="pill">Become a member</JoinButton>
+          </div>
+          <a href={site.links.youtube} target="_blank" rel="noreferrer" style={{ width: "min(360px, 100%)", textDecoration: "none" }}>
+            <p className="d red" style={{ fontSize: 26, letterSpacing: "-0.03em" }}>Latest message</p>
+            <span className="pill" style={{ minHeight: 36, fontSize: 14 }}>Watch now ↗</span>
+            <div style={{ position: "relative", marginTop: 10 }}>
+              <Photo src="/images/preach.jpg" ratio="r-video" pos="45% 30%" sizes="360px" />
+              <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 2 }}><PlayIcon size={56} /></span>
+            </div>
+          </a>
         </div>
-        <div style={{ marginTop: 44 }}>
-          <Photo src="/images/worship.jpg" alt="The Check It congregation standing in worship" ratio="r-wide" priority sizes="100vw" />
+      </section>
+
+      {/* STATEMENT */}
+      <section className="wrap section">
+        <div className="rule reveal" style={{ maxWidth: 1000 }}>
+          <h2 className="d d-statement">Check It exists to <span className="red">proclaim the Kingdom of God</span> through the Word, worship and <span className="red">miracles.</span></h2>
+          <div style={{ marginTop: 28 }}><Link className="pill" href="/about">More about Check It</Link></div>
         </div>
       </section>
 
       {/* SERVICE TIMES */}
-      <section className="wrap" style={{ paddingTop: 72 }}>
-        <div className="grid g2" style={{ alignItems: "end", marginBottom: 28, gap: 24 }}>
+      <section className="wrap section">
+        <div className="head reveal">
           <h2 className="d d-lg">His presence.<br /><span className="red">His Kingdom.</span></h2>
-          <p className="lead">Real worship. Real miracles. A seat with your name on it. All times {site.contact.timezone}.</p>
+          <p className="lead" style={{ maxWidth: 420 }}>Real worship. Real miracles. A seat with your name on it. All times {site.contact.timezone}.</p>
         </div>
         <ServiceCards />
       </section>
 
       {/* LIFE */}
       <section className="wrap section">
-        <h2 className="d d-md" style={{ marginBottom: 24 }}>Life at Check It</h2>
+        <h2 className="d d-lg reveal" style={{ marginBottom: 28 }}>Life at <span className="red">Check It.</span></h2>
         <div className="grid g4">
           <Photo src="/images/family.jpg" alt="The Check It family together" pos="50% 50%" />
           <Photo src="/images/hug.jpg" alt="Members embracing" />

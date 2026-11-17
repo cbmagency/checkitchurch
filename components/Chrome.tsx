@@ -39,36 +39,53 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="cols">
-          <div className="col">
-            <span className="logo-tile">
-              <Image src="/images/logo.png" alt={site.name} width={132} height={40} style={{ height: 40, width: "auto", display: "block" }} />
-            </span>
-            <p className="dim" style={{ marginTop: 8 }}>{site.slogan}</p>
+        <div className="pair">
+          <div className="reveal">
+            <p className="d d-lg">{site.shortName}<br /><span className="red">In-person</span></p>
+            <div style={{ marginTop: 18 }}><Link className="pill" href="/new-here">Plan your visit</Link></div>
           </div>
-          <div className="col">
-            <p className="label">Pages</p>
-            <Link href="/">Home</Link>
-            {site.nav.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
-          </div>
-          <div className="col">
-            <p className="label">More</p>
-            <Link href="/about#prayer">Prayer Request</Link>
-            <a href={site.links.shop} target="_blank" rel="noreferrer">Shop the Collection</a>
-            <Link href="/watch#app">Get the App</Link>
-          </div>
-          <div className="col">
-            <p className="label">Contact</p>
-            <a href={site.contact.phoneHref}>{site.contact.phone}</a>
-            <span className="dim">WhatsApp: {site.contact.whatsapp}</span>
-            <span className="dim">
-              <a href={site.links.instagram} target="_blank" rel="noreferrer">Instagram</a> ·{" "}
-              <a href={site.links.tiktok} target="_blank" rel="noreferrer">TikTok</a> ·{" "}
-              <a href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>
-            </span>
+          <div className="reveal">
+            <p className="d d-lg">{site.shortName}<br /><span className="red">Online</span></p>
+            <div style={{ marginTop: 18 }}><Link className="pill" href="/watch">Watch live</Link></div>
           </div>
         </div>
-        <p className="copy">© {new Date().getFullYear()} {site.name}</p>
+        <div className="cols">
+          <div>
+            <p className="colh">Pages</p>
+            <div className="col">
+              <Link href="/">Home</Link>
+              {site.nav.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+            </div>
+          </div>
+          <div>
+            <p className="colh">Connect</p>
+            <div className="col">
+              <Link href="/new-here#membership">Become a member</Link>
+              <Link href="/about#prayer">Prayer request</Link>
+              <a href={site.links.shop} target="_blank" rel="noreferrer">Shop</a>
+              <Link href="/watch#app">Get the app</Link>
+            </div>
+          </div>
+          <div>
+            <p className="colh">Socials</p>
+            <div className="col">
+              <a href={site.links.instagram} target="_blank" rel="noreferrer">Instagram</a>
+              <a href={site.links.tiktok} target="_blank" rel="noreferrer">TikTok</a>
+              <a href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>
+              <a href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>
+            </div>
+          </div>
+          <div>
+            <p className="colh">Contact</p>
+            <div className="col">
+              <a href={site.contact.phoneHref}>{site.contact.phone}</a>
+              <span>WhatsApp: {site.contact.whatsapp}</span>
+              <span style={{ lineHeight: 1.4 }}>{site.contact.address}</span>
+            </div>
+          </div>
+        </div>
+        <p className="d mark" aria-hidden="true">{site.shortName}</p>
+        <p className="copy">© {new Date().getFullYear()} {site.name} · {site.slogan}</p>
       </div>
     </footer>
   );
