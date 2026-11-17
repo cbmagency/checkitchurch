@@ -5,6 +5,17 @@ import { site } from "@/site.config";
 import { Faq, PageHero, Photo } from "@/components/Blocks";
 import { sendForm } from "@/components/Member";
 
+const gallery: [string, string, string][] = [
+  ["/images/women5.jpg", "Women of Check It", "50% 35%"],
+  ["/images/outreach2.jpg", "Serving the neighborhood", "50% 50%"],
+  ["/images/family.jpg", "The Check It family", "50% 50%"],
+  ["/images/notebooks.jpg", "School supplies for local families", "50% 50%"],
+  ["/images/highfive.jpg", "Convention 2024", "50% 30%"],
+  ["/images/street.jpg", "Outreach on the block", "50% 50%"],
+  ["/images/team.jpg", "The serve team", "50% 35%"],
+  ["/images/balloons.jpg", "Community day", "50% 40%"],
+];
+
 export default function About() {
   const [sent, setSent] = useState(false);
   return (
@@ -67,12 +78,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* FAMILY */}
-      <section className="wrap section">
-        <div className="grid g3">
-          <Photo src="/images/outreach2.jpg" alt="Check It serving the neighborhood" ratio="r-land" pos="50% 50%" />
-          <Photo src="/images/notebooks.jpg" alt="School supplies for local families" ratio="r-land" pos="50% 50%" />
-          <Photo src="/images/women4.jpg" alt="Women of Check It" ratio="r-land" pos="50% 35%" />
+      {/* LIFE AT CHECK IT: slow photo strip, pauses on hover */}
+      <section className="section">
+        <div className="wrap"><h2 className="d d-lg" style={{ marginBottom: 28 }}>Life at <span className="blue">Check It.</span></h2></div>
+        <div className="marquee" style={{ marginTop: 0 }}>
+          <div className="track">
+            {[...gallery, ...gallery].map(([src, alt, pos], i) => (
+              <Photo key={i} src={src} alt={i < gallery.length ? alt : ""} pos={pos} sizes="300px" />
+            ))}
+          </div>
         </div>
       </section>
 

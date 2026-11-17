@@ -10,7 +10,7 @@ export function Photo({ src, alt = "", ratio = "r-port", pos = "50% 40%", priori
 }) {
   return (
     <div className={`frame ${ratio}`} style={style}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} style={{ objectPosition: pos }} />
+      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} quality={85} style={{ objectPosition: pos }} />
     </div>
   );
 }
@@ -21,7 +21,7 @@ export function PageHero({ src, pos = "50% 40%", label, title, sub, children }: 
   return (
     <section className="wrap" style={{ paddingTop: 12 }}>
       <div className="phero">
-        <Image src={src} alt="" fill priority sizes="100vw" style={{ objectPosition: pos }} />
+        <Image src={src} alt="" fill priority quality={85} sizes="100vw" style={{ objectPosition: pos }} />
         <div className="in">
           <p className="label" style={{ color: "rgba(255,255,255,.75)" }}>{label}</p>
           <h1 className="d d-xl">{title}</h1>
