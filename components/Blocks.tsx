@@ -35,7 +35,7 @@ export function PageHero({ src, pos = "50% 40%", label, title, sub, children }: 
 
 export function ServiceCards() {
   return (
-    <div className="grid g4">
+    <div className="grid services">
       {site.services.map((s) => (
         <Link key={s.name} href="/watch" className="card service">
           <span className="d when" style={{ color: "featured" in s && s.featured ? "var(--primary)" : "var(--ink)" }}>

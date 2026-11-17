@@ -46,8 +46,8 @@ export default function Give() {
           <div><p className="label">CHECKITCMSHOP</p><h2 className="d d-lg">Wear the<br /><span className="blue">Word.</span></h2><p className="lead" style={{ marginTop: 14, maxWidth: 480 }}>Apparel, accessories and books for adults and kids. Every purchase supports the ministry.</p></div>
           <a className="pill" href={site.links.shop} target="_blank" rel="noreferrer">Shop checkitcmshop.org</a>
         </div>
-        <div className="grid g4">
-          {[1, 2, 3, 4].map((i) => <div key={i} className="tbd r-port">Product photo {i}<br />from CHECKITCMSHOP</div>)}
+        <div className="shop2">
+          {[1, 2].map((i) => <div key={i} className="tbd r-port">Product photo {i}<br />from CHECKITCMSHOP</div>)}
         </div>
       </section>
     </>
