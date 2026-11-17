@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/site.config";
-import { Photo, PhotoCard, PlayIcon, ServiceCards, VideoTile } from "@/components/Blocks";
+import { Photo, PlayIcon, SermonGrid, ServiceCards, VideoTile } from "@/components/Blocks";
 
 export const metadata: Metadata = { title: "Watch", description: "Watch Check It Church live, catch up on past sermons and Check It Kids lessons." };
 
@@ -14,10 +14,10 @@ export default function Watch() {
             <p className="label red">● Next live: Sunday 10 AM {site.contact.timezone}</p>
             <h1 className="d d-xl">Church goes<br />where you go.</h1>
           </div>
-          <div className="btns"><a className="pill p-red" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a><a className="pill p-out" href="#app">Get the App</a></div>
+          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a><a className="pill" href="#app">Get the App</a></div>
         </div>
         <a href={site.links.youtube} target="_blank" rel="noreferrer" aria-label="Watch live" style={{ position: "relative", display: "block" }}>
-          <Photo src="/images/preach.jpg" ratio="r-video" pos="45% 35%" priority sizes="100vw" />
+          <Photo src="/images/preach.jpg" ratio="r-wide" pos="45% 35%" priority sizes="100vw" />
           <span style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14, zIndex: 2, color: "#fff" }}>
             <PlayIcon size={96} />
             <span className="d" style={{ fontSize: 13 }}>Live stream plays here</span>
@@ -31,27 +31,27 @@ export default function Watch() {
         <ServiceCards />
       </section>
 
-      {/* SERIES */}
+      {/* RECENT SERMONS */}
       <section id="sermons" className="wrap section">
         <div className="head">
-          <div><h2 className="d d-lg">Catch up on<br /><span className="red">a series.</span></h2><p className="lead" style={{ marginTop: 14 }}>Every message lives on our YouTube channel.</p></div>
-          <a className="pill p-navy" href={site.links.youtube} target="_blank" rel="noreferrer">All Past Sermons</a>
+          <div><h2 className="d d-lg">Watch recent<br /><span className="blue">sermons.</span></h2><p className="lead" style={{ marginTop: 14 }}>Prayer, worship and testimony. Every message lives on YouTube.</p></div>
+          <a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">All sermons</a>
         </div>
-        <div className="grid g4">
-          {site.series.map((s) => <PhotoCard key={s.name} src={s.image} pos={s.pos} label="Series" title={s.name} href={site.links.youtube} cta="Watch" minHeight={380} />)}
-        </div>
+        <SermonGrid count={8} />
       </section>
 
       {/* CHECK IT KIDS */}
       <section id="kids" className="wrap section">
         <div className="head">
           <div><p className="label blue">Check It Kids</p><h2 className="d d-lg">Kids lessons.</h2><p className="lead" style={{ marginTop: 14 }}>Sunday children&apos;s church, ready to watch together at home.</p></div>
-          <a className="pill p-navy" href={site.links.kidsChannel} target="_blank" rel="noreferrer">Check It Kids Channel</a>
+          <a className="pill" href={site.links.kidsChannel} target="_blank" rel="noreferrer">Check It Kids Channel</a>
         </div>
-        <div className="grid g3">
-          <VideoTile src="/images/kidsdance.jpg" href={site.links.kidsChannel} title="This Sunday's lesson" />
-          <VideoTile src="/images/family.jpg" pos="48% 85%" href={site.links.kidsChannel} title="Last week" />
-          <VideoTile src="/images/highfive.jpg" pos="50% 30%" href={site.links.kidsChannel} title="Two weeks ago" />
+        <div className="kids grid g2">
+          <VideoTile src="/images/kidsdance.jpg" pos="50% 30%" href={site.links.kidsChannel} title="Watch on the Kids Channel" />
+          <div className="card" style={{ padding: 32 }}>
+            <p className="d d-sm">Little hearts. <span className="blue">Big faith.</span></p>
+            <p className="body" style={{ marginTop: 10 }}>Bible stories, worship and lessons made for kids, ready to watch together at home.</p>
+          </div>
         </div>
       </section>
 
@@ -60,12 +60,12 @@ export default function Watch() {
         <div className="member">
           <div className="pad">
             <p className="label" style={{ color: "rgba(255,255,255,.65)" }}>The Check It App</p>
-            <h2 className="d d-lg">Take church<br /><span style={{ color: "#A9B4FF" }}>in your pocket.</span></h2>
+            <h2 className="d d-lg">Take church<br /><span className="outline">in your pocket.</span></h2>
             <p style={{ margin: "16px 0 24px", fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,.88)" }}>Live services, past messages and Times of Refreshing, wherever you are.</p>
             <div className="btns"><a className="pill p-white" href={site.links.appStore}>App Store</a><a className="pill p-ghost" href={site.links.googlePlay}>Google Play</a></div>
           </div>
           <div style={{ position: "relative", minHeight: 320 }}>
-            <Photo src="/images/joy.jpg" pos="50% 25%" style={{ position: "absolute", inset: 0, aspectRatio: "auto", borderRadius: 0 }} />
+            <Photo src="/images/street.jpg" pos="50% 50%" style={{ position: "absolute", inset: 0, aspectRatio: "auto", borderRadius: 0 }} />
           </div>
         </div>
       </section>

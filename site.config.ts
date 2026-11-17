@@ -15,13 +15,14 @@ export const site = {
 
   theme: {
     ink: "#141414", // headings + body text
-    primary: "#2B3990", // single accent: logo blue
-    secondary: "#2B3990", // same blue (one-accent system)
+    primary: "#1E2A78", // deep blue: headline accents, panels, buttons
+    secondary: "#A3151F", // deep red: brackets and small details only
     bg: "#F3F2EE", // paper
   },
 
   contact: {
     phone: "(855) 812-4325",
+    email: "info@checkitcm.org",
     phoneHref: "tel:+18558124325",
     whatsapp: "[WhatsApp number]",
     address: "[Street address, City, State]",
@@ -60,6 +61,8 @@ export const site = {
       title: "Senior Pastor",
       image: "/images/pastor_gold.jpg",
       pos: "50% 15%",
+      aboutImage: "/images/pastor_gold.jpg",
+      aboutPos: "50% 15%",
       bio: "Pastor, teacher, healing minister and author. He has given his life to spreading the power of God's Word, worship and miracles, guiding thousands toward victorious, purposeful lives.",
     },
     {
@@ -67,22 +70,34 @@ export const site = {
       title: "First Lady",
       image: "/images/juna.jpg",
       pos: "50% 18%",
+      aboutImage: "/images/juna_white.jpg",
+      aboutPos: "50% 20%",
       bio: "[2 to 3 sentences on Minister Juna's heart for the ministry, in her words.]",
     },
   ],
 
-  series: [
-    { name: "Times of Refreshing", image: "/images/arms.jpg", pos: "50% 25%" },
-    { name: "The Blood Makes You Untouchable", image: "/images/preach.jpg", pos: "45% 30%" },
-    { name: "Enjoying the Blessings of the Covenant", image: "/images/joy.jpg", pos: "50% 25%" },
-    { name: "God Forgives & Forgets Our Sins", image: "/images/worship.jpg", pos: "50% 40%" },
+  membershipSteps: [
+    { title: "Register", text: "Fill out the membership form. Accurate, up-to-date details only." },
+    { title: "Stay active", text: "Join our services regularly on Facebook or YouTube." },
+    { title: "Stay connected", text: "Need to update your details? Email info@checkitcm.org." },
   ],
 
-  membershipSteps: [
-    { title: "Start online", text: "Fill out a short form. It takes about a minute." },
-    { title: "Meet the team", text: "Someone from Check It reaches out personally to get to know you." },
-    { title: "Membership class", text: "[Confirm: when it meets, how long, what it covers]" },
-    { title: "Get planted", text: "Join a serve team, a prayer group and the life of the church." },
+  // Where form submissions go. Paste a webhook (GoHighLevel, Formspree, Zapier) to collect them.
+  // Left empty, the membership form opens a pre-filled email to contact.email instead.
+  forms: {
+    membershipEndpoint: "",
+  },
+
+  // Recent sermons row. id = the YouTube video id (the part after watch?v=).
+  sermons: [
+    { id: "csoG4316mRo", title: "Prayer for Financial Breakthrough", tag: "Prayer" },
+    { id: "hquM-zhR2i8", title: "My Spiritual Channels Are Open", tag: "Prayer" },
+    { id: "iFTKhgMRRvI", title: "I'm Making Progress", tag: "Worship" },
+    { id: "Ts7VgX_jVOA", title: "It's Turning Around for My Good", tag: "Worship" },
+    { id: "eLY7rKpS_Zc", title: "I've Got Joy", tag: "Worship" },
+    { id: "uxJs6putyUQ", title: "Delayed But Not Denied", tag: "Testimony" },
+    { id: "PKV1xlCfn_U", title: "Your Son Won't Survive", tag: "Testimony" },
+    { id: "uSRknUHtExw", title: "Then Something Impossible Happened", tag: "Testimony" },
   ],
 
   giveWays: [

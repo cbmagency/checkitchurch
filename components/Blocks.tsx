@@ -38,7 +38,7 @@ export function ServiceCards() {
     <div className="grid g4">
       {site.services.map((s) => (
         <Link key={s.name} href="/watch" className="card service">
-          <span className="d when" style={{ color: "featured" in s && s.featured ? "var(--primary)" : "var(--secondary)" }}>
+          <span className="d when" style={{ color: "featured" in s && s.featured ? "var(--primary)" : "var(--ink)" }}>
             {s.day} · {s.time}
           </span>
           <span className="d d-sm">{s.name}</span>
@@ -99,5 +99,26 @@ export function VideoTile({ src, pos, href, title, ratio = "r-video" }: { src: s
       </div>
       {title && <span className="d" style={{ display: "block", marginTop: 12, fontSize: 16 }}>{title}</span>}
     </a>
+  );
+}
+
+export const ytThumb = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+export const ytUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+
+/** Echo-style row of recent sermons, pulled from site.sermons (YouTube ids). */
+export function SermonGrid({ count = 4 }: { count?: number }) {
+  return (
+    <div className="sermons">
+      {site.sermons.slice(0, count).map((s) => (
+        <a key={s.id} className="sermon" href={ytUrl(s.id)} target="_blank" rel="noreferrer">
+          <div className="frame r-video">
+            <Image src={ytThumb(s.id)} alt="" fill sizes="(max-width: 768px) 100vw, 25vw" />
+            <span className="play"><PlayIcon size={44} /></span>
+          </div>
+          <span className="tag">{s.tag}</span>
+          <span className="t">{s.title}</span>
+        </a>
+      ))}
+    </div>
   );
 }
