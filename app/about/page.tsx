@@ -34,7 +34,7 @@ export default function About() {
       <section id="pastors" className="wrap section">
         <div className="grid g2" style={{ marginBottom: 48 }}>
           <div style={{ position: "relative", aspectRatio: "4 / 5", maxWidth: 420 }}>
-            <Image src="/images/pastor_white.jpg" alt="Pastor Isaac Samuel II" fill sizes="420px" style={{ objectFit: "contain", objectPosition: "50% 100%" }} />
+            <Image src="/images/pastor_white.jpg" alt="Pastor Isaac Samuel II" fill sizes="420px" style={{ objectFit: "contain", objectPosition: "50% 100%", mixBlendMode: "multiply", filter: "grayscale(1) contrast(1.08)" }} />
           </div>
           <div>
             <p className="label">Our Pastors</p>
