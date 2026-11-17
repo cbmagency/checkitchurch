@@ -45,6 +45,7 @@ export const site = {
     { label: "About", href: "/about" },
     { label: "Watch", href: "/watch" },
     { label: "Give", href: "/give" },
+    { label: "Shop", href: "https://checkitcmshop.org/" },
   ],
 
   services: [

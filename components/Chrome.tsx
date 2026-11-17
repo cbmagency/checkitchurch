@@ -30,11 +30,13 @@ export function Nav() {
         <span /><span /><span />
       </button>
       <nav className={`nav-links${open ? " open" : ""}`} aria-label="Main">
-        {site.nav.map((l) => (
-          <Link key={l.href} href={l.href} className={path === l.href ? "on" : ""}>
-            {l.label}
-          </Link>
-        ))}
+        {site.nav.map((l) =>
+          l.href.startsWith("http") ? (
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
+          ) : (
+            <Link key={l.href} href={l.href} className={path === l.href ? "on" : ""}>{l.label}</Link>
+          )
+        )}
         <JoinButton style={{ minHeight: 44 }} />
       </nav>
     </header>
@@ -60,7 +62,7 @@ export function Footer() {
             <p className="colh">Pages</p>
             <div className="col">
               <Link href="/">Home</Link>
-              {site.nav.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+              {site.nav.filter((l) => !l.href.startsWith("http")).map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
             </div>
           </div>
           <div>
