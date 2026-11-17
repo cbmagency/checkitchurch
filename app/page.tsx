@@ -14,8 +14,10 @@ export default function Home() {
           <div className="ph p1 drift"><Image src="/images/worship.jpg" alt="The Check It congregation in worship" fill priority quality={85} sizes="(max-width: 700px) 40vw, 420px" style={{ objectPosition: "50% 45%" }} /></div>
           <div className="ph p2 drift"><Image src="/images/arms.jpg" alt="A member worshipping with arms raised" fill priority quality={85} sizes="(max-width: 700px) 25vw, 220px" style={{ objectPosition: "28% 20%" }} /></div>
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">
-            <p className="d blue" style={{ fontSize: "clamp(18px, 2.4cqw, 30px)", letterSpacing: "-0.03em" }}>Latest message</p>
-            <span className="pill" style={{ minHeight: 34 }}>Watch now ↗</span>
+            <div className="row">
+              <p className="d blue" style={{ fontSize: "clamp(18px, 2.4cqw, 30px)", letterSpacing: "-0.03em" }}>Latest message</p>
+              <span className="pill" style={{ minHeight: 30 }}>Watch now ↗</span>
+            </div>
             <div className="ph p3"><Image src={ytThumb(latest.id)} alt={latest.title} fill quality={85} sizes="(max-width: 700px) 100vw, 460px" /></div>
           </a>
           <p className="d accent" aria-hidden="true">All</p>

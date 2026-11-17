@@ -48,14 +48,14 @@ export default function About() {
             <p className="label">Our Pastors</p>
             <h2 className="d d-lg">Led with<br /><span className="blue">fire and love.</span></h2>
           </div>
-          <p className="lead" style={{ maxWidth: 480 }}>Pastor Isaac and Minister Juna have given their lives to the Word, worship and miracles. Thousands have found hope, healing and purpose through this house.</p>
+          <p className="lead" style={{ maxWidth: 480 }}>Pastor Isaac and First Lady Juna have given their lives to the Word, worship and miracles. Thousands have found hope, healing and purpose through this house.</p>
         </div>
         <div className="grid g2" style={{ alignItems: "start" }}>
           {site.pastors.map((p) => (
             <div key={p.name}>
               <Photo src={p.aboutImage} alt={p.name} pos={p.aboutPos} />
               <p className="d" style={{ marginTop: 20, fontSize: 24 }}>{p.name}</p>
-              <p className="label red" style={{ marginTop: 8 }}>{p.title}</p>
+              {p.title ? <p className="label red" style={{ marginTop: 8 }}>{p.title}</p> : <div style={{ height: 8 }} />}
               <p className="body">{p.bio}</p>
             </div>
           ))}

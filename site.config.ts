@@ -65,13 +65,13 @@ export const site = {
       bio: "Pastor, teacher, healing minister and author. He has given his life to spreading the power of God's Word, worship and miracles, guiding thousands toward victorious, purposeful lives.",
     },
     {
-      name: "Minister Juna Samuel",
-      title: "First Lady",
+      name: "First Lady Juna Samuel",
+      title: "",
       image: "/images/juna.jpg",
       pos: "50% 18%",
       aboutImage: "/images/juna_white.jpg",
       aboutPos: "50% 20%",
-      bio: "[2 to 3 sentences on Minister Juna's heart for the ministry, in her words.]",
+      bio: "Juna Samuel is the wife of Pastor Isaac Samuel and a devoted woman of God who serves faithfully alongside her husband at Check It Church. With a heart for service, she is committed to supporting the vision of the church, strengthening its mission, and serving wherever she is needed.",
     },
   ],
 
