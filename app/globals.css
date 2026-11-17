@@ -154,6 +154,8 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 @container (max-width: 760px) {
   .hero .top { grid-template-columns: 1fr; gap: 36px; }
   .hero h1 { font-size: 18.5cqw; }
+  .hero .bar { flex-wrap: nowrap; justify-content: space-between; gap: 0; margin-top: 22px; }
+  .hero .bar .pill { gap: 5px; font-size: clamp(11px, 3.3cqw, 14px); letter-spacing: 0; white-space: nowrap; }
 }
 
 /* ---------- photo marquee (the one moving element) ---------- */
