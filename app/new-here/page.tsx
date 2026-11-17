@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/site.config";
 import { JoinButton } from "@/components/Member";
-import { Faq, PageHero, Photo, ServiceCards } from "@/components/Blocks";
+import { Faq, has, PageHero, Photo, ServiceCards } from "@/components/Blocks";
 
 export const metadata: Metadata = { title: "New Here", description: "New to Check It Church? How to join us live online, service times, kids and membership." };
 
 export default function NewHere() {
   return (
     <>
-      <PageHero src="/images/groupred.jpg" pos="50% 55%" label="New Here" title={<>First time?<br /><span className="outline">We saved you a seat.</span></>} sub="Wherever you are, there's a place for you. Here's how to join us live.">
-        <a className="pill p-white" href="#visit">Join us live</a>
-        <a className="pill p-ghost" href="#membership">Become a member</a>
+      <PageHero src="/images/groupred.jpg" pos="50% 55%" label="New Here" title={<>First time?<br /><span className="blue">Welcome home.</span></>} sub="Wherever you are, there's a place for you. Here's how to join us live.">
+        <a className="pill" href="#visit">Join us live</a>
+        <a className="pill" href="#membership">Become a member</a>
       </PageHero>
 
       {/* STEPS */}
@@ -34,20 +34,16 @@ export default function NewHere() {
 
       {/* VISIT */}
       <section id="visit" className="wrap section">
-        <div className="grid g2" style={{ alignItems: "start" }}>
-          <div className="card" style={{ padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
-            <p className="label" style={{ margin: 0 }}>Join us live</p>
+        <div className="card" style={{ padding: "clamp(22px, 3vw, 36px)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "end", gap: 24 }}>
+          <div style={{ maxWidth: 560 }}>
+            <p className="label red" style={{ margin: "0 0 10px" }}>Join us live</p>
             <h2 className="d d-md">Sundays · 10 AM</h2>
-            <p className="body">Every service streams live on YouTube and Facebook. Bring your Bible, your family and your expectation.</p>
-            <p style={{ fontSize: 15, fontWeight: 600 }}>Live worship · The Word · Prayer · Miracles</p>
-            <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a><a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a><Link className="pill" href="/watch">Watch page</Link></div>
+            <p className="body" style={{ marginTop: 12 }}>Every service streams live. Bring your Bible, your family and your expectation. All times {site.contact.timezone}.</p>
           </div>
-          <div>
-            <h2 className="d d-md" style={{ marginBottom: 8 }}>Every week.</h2>
-            <p className="body" style={{ marginBottom: 20 }}>Live online, every week. All times {site.contact.timezone}.</p>
-            <ServiceCards />
-          </div>
+          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>{has(site.links.facebook) && <a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}<Link className="pill" href="/watch">Watch page</Link></div>
         </div>
+        <h2 className="d d-md" style={{ margin: "clamp(40px, 5vw, 64px) 0 20px" }}>Every <span className="blue">week.</span></h2>
+        <ServiceCards />
       </section>
 
       {/* KIDS */}
@@ -100,7 +96,6 @@ export default function NewHere() {
             <Faq items={[
               ["What's the vibe?", "Warm, faith-filled and a little loud. Tune in a stranger, leave knowing somebody."],
               ["Where do I watch?", "YouTube or Facebook. Every service streams live, and past messages stay up on YouTube."],
-              ["How long is service?", "About [X] hours of worship, the Word and prayer."],
               ["What about my kids?", "Check It Kids has its own YouTube channel with lessons and worship made for little ones."],
               ["Can I join from another country?", "Yes. Our family connects from the Caribbean, the States and around the world."],
               ["Who can become a member?", "Anyone genuinely committed to the ministry who consistently connects with us through our online platforms."],

@@ -107,6 +107,14 @@ export const site = {
     { id: "uSRknUHtExw", title: "Then Something Impossible Happened", tag: "Testimony" },
   ],
 
+  // Statement of faith (About page). Section stays hidden until this has entries.
+  // Drafts awaiting the church's wording:
+  //   The Bible: God's Word is true, alive and the foundation for everything we do.
+  //   Jesus: Salvation is found in Jesus Christ alone, through His blood and His finished work.
+  //   The Holy Spirit: The Spirit empowers believers today, with gifts, healing and miracles.
+  //   The Church: We're called to be a family that worships, grows and serves together.
+  beliefs: [] as { q: string; a: string }[],
+
   giveWays: [
     { name: "Online", detail: "Card or bank, one-time or recurring.", href: "https://checkitcm.org/donate/" },
     { name: "Zelle", detail: "[Zelle email or phone]" },

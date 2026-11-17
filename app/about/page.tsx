@@ -20,9 +20,9 @@ export default function About() {
   const [sent, setSent] = useState(false);
   return (
     <>
-      <PageHero src="/images/joy.jpg" pos="50% 30%" label="About Check It" title={<>Until all see<br /><span className="outline">His Kingdom.</span></>} sub="Proclaiming the Kingdom of God through the Word, worship and miracles.">
-        <a className="pill p-white" href="#pastors">Meet Our Pastors</a>
-        <a className="pill p-ghost" href="#prayer">Send a Prayer Request</a>
+      <PageHero src="/images/joy.jpg" pos="50% 30%" label="About Check It" title={<>Word. Worship.<br /><span className="blue">Miracles.</span></>} sub="Proclaiming the Kingdom of God through the Word, worship and miracles.">
+        <a className="pill" href="#pastors">Meet Our Pastors</a>
+        <a className="pill" href="#prayer">Send a Prayer Request</a>
       </PageHero>
 
       {/* MISSION */}
@@ -62,21 +62,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* BELIEFS */}
-      <section className="wrap section">
-        <div className="grid g2" style={{ alignItems: "start" }}>
-          <div>
-            <h2 className="d d-lg">What we<br /><span className="blue">believe.</span></h2>
-            <p className="lead" style={{ marginTop: 16 }}>The short version. Full statement of faith available on request.</p>
+      {/* BELIEFS: shows once site.beliefs is filled in */}
+      {site.beliefs.length > 0 && (
+        <section className="wrap section">
+          <div className="grid g2" style={{ alignItems: "start" }}>
+            <div>
+              <h2 className="d d-lg">What we<br /><span className="blue">believe.</span></h2>
+              <p className="lead" style={{ marginTop: 16 }}>The short version. Full statement of faith available on request.</p>
+            </div>
+            <Faq openFirst={false} items={site.beliefs.map((b) => [b.q, b.a] as [string, string])} />
           </div>
-          <Faq openFirst={false} items={[
-            ["The Bible", "[Confirm wording] God's Word is true, alive and the foundation for everything we do."],
-            ["Jesus", "[Confirm wording] Salvation is found in Jesus Christ alone, through His blood and His finished work."],
-            ["The Holy Spirit", "[Confirm wording] The Spirit empowers believers today, with gifts, healing and miracles."],
-            ["The Church", "[Confirm wording] We're called to be a family that worships, grows and serves together."],
-          ]} />
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* LIFE AT CHECK IT: slow photo strip, pauses on hover */}
       <section className="section">

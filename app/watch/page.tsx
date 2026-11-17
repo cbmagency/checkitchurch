@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/site.config";
-import { Photo, PlayIcon, SermonGrid, ServiceCards, VideoTile } from "@/components/Blocks";
+import { has, Photo, PlayIcon, SermonGrid, ServiceCards, VideoTile } from "@/components/Blocks";
 
 export const metadata: Metadata = { title: "Watch", description: "Watch Check It Church live, catch up on past sermons and Check It Kids lessons." };
 
@@ -14,13 +14,13 @@ export default function Watch() {
             <p className="label red">● Next live: Sunday 10 AM {site.contact.timezone}</p>
             <h1 className="d d-xl">Church goes<br />where you go.</h1>
           </div>
-          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a><a className="pill" href="#app">Get the App</a></div>
+          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a>{has(site.links.appStore) && <a className="pill" href="#app">Get the App</a>}</div>
         </div>
         <a href={site.links.youtube} target="_blank" rel="noreferrer" aria-label="Watch live" style={{ position: "relative", display: "block" }}>
           <Photo src="/images/preach.jpg" ratio="r-wide" pos="45% 35%" priority sizes="100vw" />
           <span style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14, zIndex: 2, color: "#fff" }}>
             <PlayIcon size={96} />
-            <span className="d" style={{ fontSize: 13 }}>Live stream plays here</span>
+            <span className="d" style={{ fontSize: 13 }}>Watch on YouTube</span>
           </span>
         </a>
       </section>
@@ -49,12 +49,15 @@ export default function Watch() {
         <div className="kids grid g2">
           <VideoTile src="/images/kidsdance.jpg" pos="50% 30%" href={site.links.kidsChannel} title="Watch on the Kids Channel" />
           <div className="card" style={{ padding: 32 }}>
-            <p className="d d-sm">Little hearts. <span className="blue">Big faith.</span></p>
+            <p className="d d-sm">Made for <span className="blue">little ones.</span></p>
             <p className="body" style={{ marginTop: 10 }}>Bible stories, worship and lessons made for kids, ready to watch together at home.</p>
           </div>
         </div>
       </section>
 
+      {/* APP: only when real store links are set */}
+      {(has(site.links.appStore) || has(site.links.googlePlay)) && (
+        <>
       {/* APP */}
       <section id="app" className="wrap section">
         <div className="member">
@@ -69,6 +72,8 @@ export default function Watch() {
           </div>
         </div>
       </section>
+        </>
+      )}
     </>
   );
 }

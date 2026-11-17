@@ -197,6 +197,7 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .sermon .tag { font: 700 12px/1 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .04em; color: var(--secondary); }
 .sermon .t { font: 900 18px/1.05 var(--font-body), sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
 .sermon .play { position: absolute; left: 12px; bottom: 12px; z-index: 2; }
+@media (max-width: 600px) { .sermons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; } .sermon .t { font-size: 14px; } .sermon .play svg { width: 34px; height: 34px; } .sermon .play { left: 8px; bottom: 8px; } }
 
 /* ---------- dark membership panel ---------- */
 .member { color: #fff; background: #141414; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
@@ -216,6 +217,8 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .phero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.4) 55%, rgba(10,10,10,.05) 100%); }
 .phero .in { position: relative; z-index: 2; padding: clamp(28px, 5vw, 56px); }
 .phero .frame { position: absolute !important; inset: 0; aspect-ratio: auto !important; }
+
+.phead { padding-top: clamp(24px, 4vw, 56px); }
 
 /* ---------- faq ---------- */
 details { border-bottom: 1px solid var(--line); padding: 22px 0; }

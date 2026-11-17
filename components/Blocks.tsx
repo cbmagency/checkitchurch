@@ -15,23 +15,31 @@ export function Photo({ src, alt = "", ratio = "r-port", pos = "50% 40%", priori
   );
 }
 
+/** Inner-page header: same treatment as Home. Solid type on paper, one wide photo below. */
 export function PageHero({ src, pos = "50% 40%", label, title, sub, children }: {
   src: string; pos?: string; label: string; title: ReactNode; sub: string; children?: ReactNode;
 }) {
   return (
-    <section className="wrap" style={{ paddingTop: 12 }}>
-      <div className="phero">
-        <Image src={src} alt="" fill priority quality={85} sizes="100vw" style={{ objectPosition: pos }} />
-        <div className="in">
-          <p className="label" style={{ color: "rgba(255,255,255,.75)" }}>{label}</p>
+    <section className="wrap phead">
+      <div className="head" style={{ marginBottom: 0 }}>
+        <div>
+          <p className="label red">{label}</p>
           <h1 className="d d-xl">{title}</h1>
-          <p style={{ marginTop: 18, maxWidth: 540, fontSize: 18, lineHeight: 1.5, color: "rgba(255,255,255,.9)" }}>{sub}</p>
-          {children && <div className="btns" style={{ marginTop: 24 }}>{children}</div>}
         </div>
+        <div style={{ maxWidth: 420 }}>
+          <p className="lead">{sub}</p>
+          {children && <div className="btns" style={{ marginTop: 18 }}>{children}</div>}
+        </div>
+      </div>
+      <div className="frame r-wide drift" style={{ marginTop: "clamp(28px, 4vw, 48px)" }}>
+        <Image src={src} alt="" fill priority quality={85} sizes="(max-width: 1280px) 100vw, 1232px" style={{ objectPosition: pos }} />
       </div>
     </section>
   );
 }
+
+/** True when a config value is real (not empty, "#", or a [placeholder]). Unfilled items hide themselves. */
+export const has = (v?: string) => !!v && v !== "#" && !v.includes("[");
 
 export function ServiceCards() {
   return (

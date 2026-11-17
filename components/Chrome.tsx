@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/site.config";
 import { JoinButton } from "./Member";
+import { has } from "./Blocks";
 
 export function Orbs() {
   return (
@@ -71,7 +72,7 @@ export function Footer() {
               <Link href="/new-here#membership">Become a member</Link>
               <Link href="/about#prayer">Prayer request</Link>
               <a href={site.links.shop} target="_blank" rel="noreferrer">Shop</a>
-              <Link href="/watch#app">Get the app</Link>
+              {has(site.links.appStore) && <Link href="/watch#app">Get the app</Link>}
             </div>
           </div>
           <div>
@@ -80,7 +81,7 @@ export function Footer() {
               <a href={site.links.instagram} target="_blank" rel="noreferrer">Instagram</a>
               <a href={site.links.tiktok} target="_blank" rel="noreferrer">TikTok</a>
               <a href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>
-              <a href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>
+              {has(site.links.facebook) && <a href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}
             </div>
           </div>
           <div>
@@ -88,7 +89,7 @@ export function Footer() {
             <div className="col">
               <a href={site.contact.phoneHref}>{site.contact.phone}</a>
               <a href={`mailto:${site.contact.email}`} style={{ textTransform: "none" }}>{site.contact.email}</a>
-              <span>WhatsApp: {site.contact.whatsapp}</span>
+              {has(site.contact.whatsapp) && <span>WhatsApp: {site.contact.whatsapp}</span>}
             </div>
           </div>
         </div>
