@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { site } from "@/site.config";
 import { PageHero, PhotoCard } from "@/components/Blocks";
@@ -9,7 +10,7 @@ export default function Give() {
     <>
       <PageHero src="/images/team.jpg" pos="50% 30%" label="Give" title={<>Sow into<br /><span className="outline">the Kingdom.</span></>} sub="Every gift helps people encounter God, here and around the world.">
         <a className="pill p-white" href={site.links.give} target="_blank" rel="noreferrer">Give Now</a>
-        <a className="pill p-ghost" href="#shop">Shop the Collection</a>
+        <a className="pill p-ghost" href="#shop">Shop now</a>
       </PageHero>
 
       {/* WAYS */}
@@ -41,13 +42,19 @@ export default function Give() {
       </section>
 
       {/* SHOP */}
-      <section id="shop" className="wrap section">
-        <div className="head">
+      <section id="shop" className="wrap section shopsec">
+        <div>
           <div><p className="label">CHECKITCMSHOP</p><h2 className="d d-lg">Wear the<br /><span className="blue">Word.</span></h2><p className="lead" style={{ marginTop: 14, maxWidth: 480 }}>Apparel, accessories and books for adults and kids. Every purchase supports the ministry.</p></div>
-          <a className="pill" href={site.links.shop} target="_blank" rel="noreferrer">Shop checkitcmshop.org</a>
+          <a className="pill" href={site.links.shop} target="_blank" rel="noreferrer">Shop now</a>
         </div>
         <div className="shop2">
-          {[1, 2].map((i) => <div key={i} className="tbd r-port">Product photo {i}<br />from CHECKITCMSHOP</div>)}
+          {site.shopProducts.map((p) => (
+            <a key={p.name} className="product" href={p.href} target="_blank" rel="noreferrer">
+              <div className="pimg"><Image src={p.image} alt={`${p.name} crewneck sweatshirt`} fill quality={85} sizes="(max-width: 760px) 50vw, 380px" /></div>
+              <div className="pmeta"><span className="d" style={{ fontSize: 18 }}>{p.name}</span><span style={{ fontWeight: 600 }}>{p.price}</span></div>
+              <span className="pill" style={{ minHeight: 30, fontSize: 13 }}>Shop now</span>
+            </a>
+          ))}
         </div>
       </section>
     </>

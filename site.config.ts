@@ -88,6 +88,12 @@ export const site = {
     web3formsKey: "",
   },
 
+  // Featured shop products (photos in /public/images, link to the product page).
+  shopProducts: [
+    { name: "Who But God?", price: "$45", image: "/images/shop_whobutgod.jpg", href: "https://checkitcmshop.org/products/who-but-god-2" },
+    { name: "Child of God", price: "$45", image: "/images/shop_childofgod.jpg", href: "https://checkitcmshop.org/products/child-of-god-2" },
+  ],
+
   // Recent sermons row. id = the YouTube video id (the part after watch?v=).
   sermons: [
     { id: "csoG4316mRo", title: "Prayer for Financial Breakthrough", tag: "Prayer" },

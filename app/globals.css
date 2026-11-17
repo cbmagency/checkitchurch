@@ -115,7 +115,17 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .service { padding: 20px 16px 22px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; min-height: 150px; }
 .services { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 900px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .service { min-height: 0; padding: 16px 12px 18px; gap: 8px; } .service .d-sm { font-size: 18px; } .service .where { margin-top: 4px; font-size: 13px; } }
-.shop2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 760px; }
+.product { text-decoration: none; display: flex; flex-direction: column; gap: 10px; }
+.product .pimg { position: relative; aspect-ratio: 1 / 1; background: #fff; overflow: hidden; }
+.product .pimg img { object-fit: contain; transition: transform .6s ease; }
+.product:hover .pimg img { transform: scale(1.04); }
+.product .pmeta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-top: 2px solid var(--ink); padding-top: 10px; }
+@media (max-width: 760px) { .product .pmeta { flex-direction: column; gap: 2px; } .product .pmeta .d { font-size: 15px !important; } }
+.shop2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.shopsec { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center; }
+.shopsec .pill { margin-top: 22px; }
+.shopsec .product .pill { margin-top: 0; }
+@media (max-width: 860px) { .shopsec { grid-template-columns: 1fr; gap: 28px; } }
 .service .when { font: 700 14px/1 var(--font-alt), sans-serif; letter-spacing: .02em; text-transform: uppercase; }
 .service .where { margin-top: auto; font-size: 14px; color: var(--muted); }
 
