@@ -60,7 +60,7 @@ export default function Watch() {
         <div className="member">
           <div className="pad">
             <p className="label" style={{ color: "rgba(255,255,255,.65)" }}>The Check It App</p>
-            <h2 className="d d-lg">Take church<br /><span style={{ color: "#FF6B76" }}>in your pocket.</span></h2>
+            <h2 className="d d-lg">Take church<br /><span style={{ color: "#A9B4FF" }}>in your pocket.</span></h2>
             <p style={{ margin: "16px 0 24px", fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,.88)" }}>Live services, past messages and Times of Refreshing, wherever you are.</p>
             <div className="btns"><a className="pill p-white" href={site.links.appStore}>App Store</a><a className="pill p-ghost" href={site.links.googlePlay}>Google Play</a></div>
           </div>

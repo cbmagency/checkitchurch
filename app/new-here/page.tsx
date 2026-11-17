@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "New Here", description: "Plan your f
 export default function NewHere() {
   return (
     <>
-      <PageHero src="/images/family.jpg" pos="50% 55%" label="New Here" title={<>First time?<br /><span style={{ color: "#FF6B76" }}>We saved you a seat.</span></>} sub="Everything you need to walk in like you've been coming for years.">
+      <PageHero src="/images/family.jpg" pos="50% 55%" label="New Here" title={<>First time?<br /><span style={{ color: "#A9B4FF" }}>We saved you a seat.</span></>} sub="Everything you need to walk in like you've been coming for years.">
         <a className="pill p-white" href="#visit">Plan Your Visit</a>
         <Link className="pill p-ghost" href="/watch">Watch First</Link>
       </PageHero>
@@ -86,7 +86,7 @@ export default function NewHere() {
           <div className="member" style={{ display: "block" }}>
             <div className="pad">
               <p className="label" style={{ color: "rgba(255,255,255,.65)" }}>Membership</p>
-              <h2 className="d d-lg">Make it<br /><span style={{ color: "#FF6B76" }}>home.</span></h2>
+              <h2 className="d d-lg">Make it<br /><span style={{ color: "#A9B4FF" }}>home.</span></h2>
               <div style={{ display: "flex", flexDirection: "column", gap: 18, margin: "26px 0 28px" }}>
                 {site.membershipSteps.map((s, i) => (
                   <div className="step" key={s.title}><span className="d n">{i + 1}</span><span><span className="d" style={{ display: "block", fontSize: 16 }}>{s.title}</span><p>{s.text}</p></span></div>

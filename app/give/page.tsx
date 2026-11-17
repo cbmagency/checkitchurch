@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Give", description: "Give to Check I
 export default function Give() {
   return (
     <>
-      <PageHero src="/images/team.jpg" pos="50% 30%" label="Give" title={<>Sow into<br /><span style={{ color: "#FF6B76" }}>the Kingdom.</span></>} sub="Every gift helps people encounter God, here and around the world.">
+      <PageHero src="/images/team.jpg" pos="50% 30%" label="Give" title={<>Sow into<br /><span style={{ color: "#A9B4FF" }}>the Kingdom.</span></>} sub="Every gift helps people encounter God, here and around the world.">
         <a className="pill p-white" href={site.links.give} target="_blank" rel="noreferrer">Give Now</a>
         <a className="pill p-ghost" href="#shop">Shop the Collection</a>
       </PageHero>

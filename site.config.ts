@@ -14,9 +14,9 @@ export const site = {
   url: "https://checkitcm.org",
 
   theme: {
-    ink: "#17194A", // headings + body text (logo navy)
-    primary: "#C0242F", // buttons + highlights (logo red)
-    secondary: "#3550D9", // royal blue accent
+    ink: "#111111", // headings + body text
+    primary: "#2B3990", // single accent: logo blue
+    secondary: "#2B3990", // same blue (one-accent system)
     bg: "#FAFAFC",
   },
 

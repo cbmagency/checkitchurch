@@ -9,7 +9,7 @@ export default function About() {
   const [sent, setSent] = useState(false);
   return (
     <>
-      <PageHero src="/images/worship.jpg" pos="50% 40%" label="About Check It" title={<>Until all see<br /><span style={{ color: "#FF6B76" }}>His Kingdom.</span></>} sub="Proclaiming the Kingdom of God through the Word, worship and miracles.">
+      <PageHero src="/images/worship.jpg" pos="50% 40%" label="About Check It" title={<>Until all see<br /><span style={{ color: "#A9B4FF" }}>His Kingdom.</span></>} sub="Proclaiming the Kingdom of God through the Word, worship and miracles.">
         <a className="pill p-white" href="#pastors">Meet Our Pastors</a>
         <a className="pill p-ghost" href="#prayer">Send a Prayer Request</a>
       </PageHero>

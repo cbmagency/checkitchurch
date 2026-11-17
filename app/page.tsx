@@ -46,13 +46,13 @@ export default function Home() {
       <section className="kids" aria-labelledby="kids">
         <svg className="ribbons" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
           <path d="M-40 420 C 260 180, 520 600, 820 360 S 1300 120, 1500 300" stroke="var(--secondary)" strokeWidth="46" fill="none" strokeLinecap="round" opacity=".9" />
-          <path d="M-60 520 C 300 360, 700 640, 1040 470 S 1380 380, 1520 520" stroke="var(--primary)" strokeWidth="34" fill="none" strokeLinecap="round" opacity=".85" />
+          <path d="M-60 520 C 300 360, 700 640, 1040 470 S 1380 380, 1520 520" stroke="#111111" strokeWidth="34" fill="none" strokeLinecap="round" opacity=".85" />
           <path d="M120 120 C 360 40, 520 220, 760 150" stroke="#8FB0FF" strokeWidth="26" fill="none" strokeLinecap="round" opacity=".7" />
         </svg>
         <div className="wrap" style={{ position: "relative" }}>
           <div className="grid g2">
             <div style={{ position: "relative" }}>
-              <Photo src="/images/kidsdance.jpg" alt="A volunteer dancing with a child" ratio="r-land" pos="50% 30%" style={{ border: "6px solid #fff", boxShadow: "0 20px 50px rgba(23,25,74,.18)" }} />
+              <Photo src="/images/kidsdance.jpg" alt="A volunteer dancing with a child" ratio="r-land" pos="50% 30%" style={{ border: "6px solid #fff", boxShadow: "0 20px 50px rgba(17,17,17,.18)" }} />
               <div className="sticker"><span className="d" style={{ display: "block", fontSize: 15, color: "var(--primary)" }}>Check It</span><span className="d blue" style={{ display: "block", fontSize: 34 }}>Kids</span></div>
             </div>
             <div className="card" style={{ padding: 36 }}>
@@ -61,7 +61,7 @@ export default function Home() {
               <p className="lead" style={{ margin: "16px 0 22px" }}>Little hearts, big faith. Every Sunday, kids worship, play and learn the Bible in a way they&apos;ll remember.</p>
               <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10, marginBottom: 24 }}>
                 <div className="chip b"><span className="d blue" style={{ fontSize: 13 }}>Bible, made fun</span><p className="body" style={{ marginTop: 6, fontSize: 14 }}>Stories, crafts and games.</p></div>
-                <div className="chip r"><span className="d red" style={{ fontSize: 13 }}>Real friends</span><p className="body" style={{ marginTop: 6, fontSize: 14 }}>A crew that feels like family.</p></div>
+                <div className="chip r"><span className="d" style={{ fontSize: 13 }}>Real friends</span><p className="body" style={{ marginTop: 6, fontSize: 14 }}>A crew that feels like family.</p></div>
                 <div className="chip b"><span className="d blue" style={{ fontSize: 13 }}>Big worship</span><p className="body" style={{ marginTop: 6, fontSize: 14 }}>Singing, dancing, celebrating.</p></div>
               </div>
               <a className="pill p-navy" href={site.links.kidsChannel} target="_blank" rel="noreferrer">Watch the Check It Kids Channel</a>
@@ -75,7 +75,7 @@ export default function Home() {
         <div className="member">
           <div className="pad">
             <p className="label" style={{ color: "rgba(255,255,255,.65)" }}>Membership</p>
-            <h2 className="d d-lg">Make it<br /><span style={{ color: "#FF6B76" }}>home.</span></h2>
+            <h2 className="d d-lg">Make it<br /><span style={{ color: "#A9B4FF" }}>home.</span></h2>
             <p style={{ marginTop: 18, maxWidth: 440, fontSize: 17, lineHeight: 1.6, color: "rgba(255,255,255,.86)" }}>
               Membership is how you go from visiting to belonging. You&apos;re covered in prayer, connected to a church family, and invited to serve what God is building here.
             </p>
