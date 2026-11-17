@@ -2,35 +2,37 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/site.config";
 import { JoinButton } from "@/components/Member";
-import { SermonGrid, ytThumb, ytUrl } from "@/components/Blocks";
+import { PlayIcon, SermonGrid, ytThumb, ytUrl } from "@/components/Blocks";
 
 export default function Home() {
   const latest = site.sermons[0];
   return (
     <>
-      {/* HERO: 2819-style. Photos sit behind the type; letters invert where they cross. */}
+      {/* HERO: clean editorial grid */}
       <section className="wrap hero">
-        <div className="stage">
-          <div className="ph p1 drift"><Image src="/images/worship.jpg" alt="The Check It congregation in worship" fill priority quality={85} sizes="(max-width: 700px) 40vw, 420px" style={{ objectPosition: "50% 45%" }} /></div>
-          <div className="ph p2 drift"><Image src="/images/arms.jpg" alt="A member worshipping with arms raised" fill priority quality={85} sizes="(max-width: 700px) 25vw, 220px" style={{ objectPosition: "28% 20%" }} /></div>
+        <div className="top">
+          <div>
+            <h1 className="d">Until all<br />see His<br /><span className="blue">Kingdom.</span></h1>
+            <div className="bar">
+              <Link className="pill" href="/new-here">New here</Link>
+              <Link className="pill" href="/watch">Watch live</Link>
+              <JoinButton className="pill">Become a member</JoinButton>
+            </div>
+          </div>
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">
             <div className="row">
-              <p className="d blue" style={{ fontSize: "clamp(18px, 2.4cqw, 30px)", letterSpacing: "-0.03em" }}>Latest message</p>
-              <span className="pill" style={{ minHeight: 30 }}>Watch now ↗</span>
+              <span className="d blue" style={{ fontSize: 22, letterSpacing: "-0.02em" }}>Latest message</span>
+              <span className="pill" style={{ minHeight: 30, fontSize: 13 }}>Watch now ↗</span>
             </div>
-            <div className="ph p3"><Image src={ytThumb(latest.id)} alt={latest.title} fill quality={85} sizes="(max-width: 700px) 100vw, 460px" /></div>
+            <div className="frame r-video">
+              <Image src={ytThumb(latest.id)} alt="" fill quality={85} sizes="(max-width: 760px) 100vw, 420px" />
+              <span style={{ position: "absolute", left: 12, bottom: 12, zIndex: 2 }}><PlayIcon size={48} /></span>
+            </div>
+            <p className="t">{latest.title}</p>
           </a>
-          <p className="d accent" aria-hidden="true">All</p>
-          <h1 className="d" style={{ pointerEvents: "none" }}>
-            <span className="ln">Until<span className="sr-only"> all</span></span>
-            <span className="ln">see His</span>
-            <span className="ln">Kingdom.</span>
-          </h1>
         </div>
-        <div className="bar">
-          <Link className="pill" href="/new-here">New here</Link>
-          <Link className="pill" href="/watch">Watch live</Link>
-          <JoinButton className="pill">Become a member</JoinButton>
+        <div className="wide frame r-wide drift">
+          <Image src="/images/worship.jpg" alt="The Check It family in worship" fill priority quality={85} sizes="(max-width: 1280px) 100vw, 1232px" style={{ objectPosition: "50% 45%" }} />
         </div>
       </section>
 

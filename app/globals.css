@@ -140,40 +140,20 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 }
 .nav-links a.on { border-bottom-color: var(--secondary); }
 
-/* ---------- hero (home): 2819-style. Type in white + difference blend reads near-black
-   on paper and inverts where it crosses a photo. Everything sized in container units. ---------- */
-.hero { position: relative; container-type: inline-size; padding-top: clamp(16px, 3vw, 40px); }
-/* Proportions measured from 2819church.org, in % of content width (cqw).
-   --x: text column indent, --f: type size, line pitch = 0.85 * --f. */
-.hero { --x: 9cqw; --f: 14.2cqw; }
-.hero .stage { position: relative; height: 50cqw; }
-/* desktop: hero slides up behind the nav so the top photo starts at the page edge, like 2819 */
-@media (min-width: 761px) { .hero { margin-top: -92px; padding-top: 0 !important; } .nav { position: relative; z-index: 5; } .hero .p1 { height: calc(16.2cqw + 0px); } .hero .stage { margin-top: 0; } }
-.hero h1 { position: absolute; left: var(--x); top: 9.4cqw; margin: 0; font-size: var(--f); font-weight: 800; line-height: .85; letter-spacing: -0.025em; color: #fff; mix-blend-mode: difference; pointer-events: none; }
-.hero h1 .ln { display: block; white-space: nowrap; }
-.hero .accent { position: absolute; left: 60cqw; top: 9.4cqw; margin: 0; font-size: var(--f); font-weight: 800; line-height: .85; letter-spacing: -0.025em; color: var(--primary); }
-.hero .ph { position: absolute; overflow: hidden; background: #ccc; }
-.hero .ph img { object-fit: cover; filter: grayscale(1) contrast(1.08); }
-/* top photo: from the top edge down to half the cap height of line 1 */
-.hero .p1 { left: 33cqw; top: 0; width: 25cqw; height: 16.2cqw; }
-/* left photo: bleeds past the text column, from mid line 2 to mid line 3 */
-.hero .p2 { left: -2cqw; top: 26cqw; width: 13.4cqw; height: 15.4cqw; }
-/* latest message: label beside line 2, thumbnail overlapping the end of line 3 */
-.hero .latest { position: absolute; left: 72cqw; right: 0; top: 23.4cqw; text-decoration: none; }
-.hero .latest .row { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-.hero .latest .p3 { position: absolute; left: 0; width: 100%; top: 8.6cqw; aspect-ratio: 16 / 9; }
-.hero .latest .p3 img { filter: grayscale(1) contrast(1.05); object-fit: cover; }
-.hero .bar { display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 8px; }
-@container (max-width: 700px) {
-  .hero { --x: 0cqw; --f: 18.6cqw; }
-  .hero .stage { height: auto; padding-top: 34cqw; display: flex; flex-direction: column; }
-  .hero h1 { position: relative; left: -0.6cqw; top: 0; order: 1; }
-  .hero .accent { left: 63cqw; top: 34cqw; }
-  .hero .p1 { left: 0; top: 0; width: 100cqw; height: 32cqw; }
-  .hero .p2 { display: none; }
-  .hero .latest { position: static; display: block; margin-top: 28px; order: 2; }
-  .hero .latest .row { flex-direction: row; align-items: center; gap: 14px; }
-  .hero .latest .p3 { position: relative; top: 0; margin-top: 12px; }
+/* ---------- hero (home): clean editorial grid. Headline left, latest message right,
+   one full-width photo below. Nothing overlaps; every edge sits on the content grid. ---------- */
+.hero { container-type: inline-size; padding-top: clamp(24px, 4vw, 56px); }
+.hero .top { display: grid; grid-template-columns: 7fr 4fr; gap: 6cqw; align-items: end; }
+.hero h1 { margin: 0 0 0 -0.04em; font-size: 11.6cqw; font-weight: 800; line-height: .86; letter-spacing: -0.03em; }
+.hero .bar { display: flex; flex-wrap: wrap; gap: 10px 36px; margin-top: 28px; }
+.hero .latest { text-decoration: none; display: block; padding-bottom: 6px; }
+.hero .latest .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 2px solid var(--ink); padding-top: 12px; margin-bottom: 14px; }
+.hero .latest .t { margin-top: 12px; font: 700 15px/1.35 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .01em; }
+.hero .wide { margin-top: clamp(36px, 5cqw, 64px); }
+.hero .ph img { object-fit: cover; filter: grayscale(1) contrast(1.06); }
+@container (max-width: 760px) {
+  .hero .top { grid-template-columns: 1fr; gap: 36px; }
+  .hero h1 { font-size: 18.5cqw; }
 }
 
 /* ---------- photo marquee (the one moving element) ---------- */
