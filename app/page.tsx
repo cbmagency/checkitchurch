@@ -23,7 +23,7 @@ export default function Home() {
           <p className="d accent" aria-hidden="true">All</p>
           <h1 className="d" style={{ pointerEvents: "none" }}>
             <span className="ln">Until<span className="sr-only"> all</span></span>
-            <span className="ln l2">see His</span>
+            <span className="ln">see His</span>
             <span className="ln">Kingdom.</span>
           </h1>
         </div>

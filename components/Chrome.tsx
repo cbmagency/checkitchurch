@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { site } from "@/site.config";
 import { JoinButton } from "./Member";
 
@@ -18,12 +19,17 @@ export function Orbs() {
 
 export function Nav() {
   const path = usePathname();
+  const [open, setOpen] = useState(false);
+  useEffect(() => setOpen(false), [path]);
   return (
     <header className="wrap nav">
       <Link href="/" aria-label={`${site.name} home`}>
         <Image src="/images/logo.png" alt={site.name} width={158} height={48} priority style={{ height: 48, width: "auto" }} />
       </Link>
-      <nav className="nav-links" aria-label="Main">
+      <button className="burger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
+        <span /><span /><span />
+      </button>
+      <nav className={`nav-links${open ? " open" : ""}`} aria-label="Main">
         {site.nav.map((l) => (
           <Link key={l.href} href={l.href} className={path === l.href ? "on" : ""}>
             {l.label}
