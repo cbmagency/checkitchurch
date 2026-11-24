@@ -15,7 +15,7 @@ export default function Home() {
             <h1 className="d">Until all<br />see His<br /><span className="blue">Kingdom.</span></h1>
             <div className="bar">
               <JoinButton>Become a member</JoinButton>
-              <Link className="pill" href="/watch">Watch live</Link>
+              <a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">Watch live</a>
             </div>
           </div>
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">

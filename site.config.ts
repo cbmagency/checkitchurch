@@ -43,7 +43,7 @@ export const site = {
   nav: [
     { label: "New Here", href: "/new-here" },
     { label: "About", href: "/about" },
-    { label: "Watch", href: "/watch" },
+    { label: "Watch", href: "https://www.youtube.com/@check-itchurch" },
     { label: "Give", href: "/give" },
     { label: "Shop", href: "https://checkitcmshop.org/" },
   ],

@@ -54,7 +54,7 @@ export function Footer() {
             <p className="d" style={{ fontSize: "clamp(22px, 2.6vw, 34px)", letterSpacing: "-0.02em" }}>Until all see <span className="blue">His Kingdom.</span></p>
           </div>
           <div className="btns">
-            <Link className="pill" href="/watch">Watch live</Link>
+            <a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">Watch live</a>
             <JoinButton />
           </div>
         </div>

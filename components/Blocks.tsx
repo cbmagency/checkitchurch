@@ -45,13 +45,13 @@ export function ServiceCards() {
   return (
     <div className="grid services">
       {site.services.map((s) => (
-        <Link key={s.name} href="/watch" className="card service">
+        <a key={s.name} href={site.links.youtube} target="_blank" rel="noreferrer" className="card service">
           <span className="d when" style={{ color: "featured" in s && s.featured ? "var(--primary)" : "var(--ink)" }}>
             {s.day} · {s.time}
           </span>
           <span className="d d-sm">{s.name}</span>
           <span className="where">{s.where}</span>
-        </Link>
+        </a>
       ))}
     </div>
   );

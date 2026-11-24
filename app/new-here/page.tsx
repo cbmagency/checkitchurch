@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { site } from "@/site.config";
 import { JoinButton } from "@/components/Member";
 import { Faq, has, PageHero, Photo, ServiceCards } from "@/components/Blocks";
@@ -40,7 +39,7 @@ export default function NewHere() {
             <h2 className="d d-md">Sundays · 10 AM</h2>
             <p className="body" style={{ marginTop: 12 }}>Every service streams live. Bring your Bible, your family and your expectation. All times {site.contact.timezone}.</p>
           </div>
-          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>{has(site.links.facebook) && <a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}<Link className="pill" href="/watch">Watch page</Link></div>
+          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>{has(site.links.facebook) && <a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}</div>
         </div>
         <h2 className="d d-md" style={{ margin: "clamp(40px, 5vw, 64px) 0 20px" }}>Every <span className="blue">week.</span></h2>
         <ServiceCards />
