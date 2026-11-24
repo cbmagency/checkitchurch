@@ -48,14 +48,14 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="pair">
-          <div className="reveal">
-            <p className="d d-lg">{site.shortName}<br /><span className="blue">Family</span></p>
-            <div style={{ marginTop: 18 }}><Link className="pill" href="/new-here#membership">Become a member</Link></div>
+        <div className="fclose">
+          <div style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+            <Image src="/images/logo.png" alt={site.name} width={158} height={48} style={{ height: 56, width: "auto" }} />
+            <p className="d" style={{ fontSize: "clamp(22px, 2.6vw, 34px)", letterSpacing: "-0.02em" }}>Until all see <span className="blue">His Kingdom.</span></p>
           </div>
-          <div className="reveal">
-            <p className="d d-lg">{site.shortName}<br /><span className="blue">Online</span></p>
-            <div style={{ marginTop: 18 }}><Link className="pill" href="/watch">Watch live</Link></div>
+          <div className="btns">
+            <Link className="pill" href="/watch">Watch live</Link>
+            <JoinButton />
           </div>
         </div>
         <div className="cols">
@@ -93,7 +93,6 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <p className="d mark" aria-hidden="true">{site.shortName}</p>
         <p className="copy">© {new Date().getFullYear()} {site.name} · {site.slogan}</p>
       </div>
     </footer>
