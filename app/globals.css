@@ -50,7 +50,8 @@ main { flex: 1; }
 .blue { color: var(--primary); }
 .red { color: var(--secondary); }
 /* accent word on dark panels: outlined, stays in palette */
-.outline { color: transparent; -webkit-text-stroke: 2px #fff; }
+/* accent word on dark panels: light end of the CBM blue gradient */
+.outline { color: #8C8CF7; }
 .label {
   margin: 0 0 14px;
   font: 700 13px/1.2 var(--font-alt), sans-serif;
@@ -86,8 +87,8 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 
 /* ---------- photos: one treatment for every image ---------- */
 .frame { position: relative; overflow: hidden; background: #DADAD6; }
-.frame img { object-fit: cover; filter: grayscale(1) contrast(1.06); transition: filter .6s ease, transform .9s ease; }
-.frame:hover img { filter: grayscale(0) contrast(1); transform: scale(1.03); }
+.frame img { object-fit: cover; transition: transform .9s ease; }
+.frame:hover img { transform: scale(1.03); }
 .r-wide { aspect-ratio: 16 / 7; }
 .r-video { aspect-ratio: 16 / 9; }
 .r-land { aspect-ratio: 4 / 3; }
@@ -134,11 +135,11 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .service .where { margin-top: auto; font-size: 14px; color: var(--muted); }
 
 .photo-card { position: relative; overflow: hidden; min-height: 380px; padding: 26px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; color: #fff; text-decoration: none; background: #222; }
-.photo-card img { object-fit: cover; filter: grayscale(1) contrast(1.06); transition: filter .6s, transform .9s; }
+.photo-card img { object-fit: cover; transition: transform .9s; }
 .photo-card::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(10,10,10,.9) 10%, rgba(10,10,10,.05) 70%); }
 .photo-card > *:not(img) { position: relative; z-index: 2; }
 .photo-card:hover { color: #fff; }
-.photo-card:hover img { filter: grayscale(0); transform: scale(1.03); }
+.photo-card:hover img { transform: scale(1.03); }
 
 /* ---------- nav ---------- */
 .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 22px; }
@@ -164,13 +165,14 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .hero .latest .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 2px solid var(--ink); padding-top: 12px; margin-bottom: 14px; }
 .hero .latest .t { margin-top: 12px; font: 700 15px/1.35 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .01em; }
 .hero .wide { margin-top: clamp(36px, 5cqw, 64px); }
-.hero .ph img { object-fit: cover; filter: grayscale(1) contrast(1.06); }
+.hero .ph img { object-fit: cover; }
 @container (max-width: 760px) {
   .hero .top { grid-template-columns: 1fr; gap: 36px; }
   .hero h1 { font-size: 18.5cqw; }
-  .hero .bar { flex-wrap: nowrap; justify-content: space-between; gap: 0; margin-top: 22px; }
-  .hero .bar { gap: 6px; }
-  .hero .bar .pill { min-height: 38px; padding: 0 11px; font-size: clamp(10.5px, 3.1cqw, 13px); letter-spacing: 0; white-space: nowrap; }
+  /* mobile: main action full width on top, the other two side by side */
+  .hero .bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+  .hero .bar .pill { min-height: 50px; padding: 0 12px; font-size: 13px; }
+  .hero .bar .p-grad { grid-column: 1 / -1; order: -1; }
 }
 
 /* ---------- photo marquee (the one moving element) ---------- */
@@ -218,7 +220,7 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 
 /* ---------- inner page hero ---------- */
 .phero { position: relative; min-height: clamp(420px, 60vh, 620px); display: flex; align-items: flex-end; overflow: hidden; color: #fff; background: #222; }
-.phero img { object-fit: cover; filter: grayscale(1) contrast(1.05); }
+.phero img { object-fit: cover; }
 .phero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.4) 55%, rgba(10,10,10,.05) 100%); }
 .phero .in { position: relative; z-index: 2; padding: clamp(28px, 5vw, 56px); }
 .phero .frame { position: absolute !important; inset: 0; aspect-ratio: auto !important; }

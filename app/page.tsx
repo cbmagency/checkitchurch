@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/site.config";
 import { JoinButton } from "@/components/Member";
-import { PlayIcon, SermonGrid, ytThumb, ytUrl } from "@/components/Blocks";
+import { SermonGrid, ytThumb, ytUrl } from "@/components/Blocks";
 
 export default function Home() {
   const latest = site.sermons[0];
@@ -26,13 +26,9 @@ export default function Home() {
             </div>
             <div className="frame r-video">
               <Image src={ytThumb(latest.id)} alt="" fill quality={85} sizes="(max-width: 760px) 100vw, 420px" />
-              <span style={{ position: "absolute", left: 12, bottom: 12, zIndex: 2 }}><PlayIcon size={48} /></span>
             </div>
             <p className="t">{latest.title}</p>
           </a>
-        </div>
-        <div className="wide frame r-wide drift">
-          <Image src="/images/worship.jpg" alt="The Check It family in worship" fill priority quality={85} sizes="(max-width: 1280px) 100vw, 1232px" style={{ objectPosition: "50% 45%" }} />
         </div>
       </section>
 
@@ -41,6 +37,13 @@ export default function Home() {
         <div className="rule reveal" style={{ maxWidth: 1000 }}>
           <h2 className="d d-statement">Check It exists to <span className="blue">proclaim the Kingdom of God</span> through the Word, worship and <span className="blue">miracles.</span></h2>
           <div style={{ marginTop: 28 }}><Link className="pill" href="/about">More about Check It</Link></div>
+        </div>
+      </section>
+
+      {/* FAMILY PHOTO */}
+      <section className="wrap" style={{ marginTop: "clamp(48px, 6vw, 88px)" }}>
+        <div className="frame r-wide drift">
+          <Image src="/images/worship.jpg" alt="The Check It family in worship" fill quality={85} sizes="(max-width: 1280px) 100vw, 1232px" style={{ objectPosition: "50% 45%" }} />
         </div>
       </section>
 

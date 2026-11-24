@@ -50,7 +50,7 @@ export default function NewHere() {
       <section id="kids" className="wrap section">
         <div className="grid g2">
           <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-            <Photo src="/images/kidsdance.jpg" alt="A volunteer dancing with a child" />
+            <Photo src="/images/convention.jpg" alt="Check It family at Convention 2024" pos="50% 40%" />
             <Photo src="/images/balloons.jpg" alt="Community day with the Check It family" pos="40% 40%" />
           </div>
           <div>
