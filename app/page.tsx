@@ -14,14 +14,13 @@ export default function Home() {
           <div>
             <h1 className="d">Until all<br />see His<br /><span className="blue">Kingdom.</span></h1>
             <div className="bar">
-              <Link className="pill" href="/new-here">New here</Link>
-              <Link className="pill" href="/watch">Watch live</Link>
               <JoinButton>Become a member</JoinButton>
+              <Link className="pill" href="/watch">Watch live</Link>
             </div>
           </div>
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">
             <div className="row">
-              <span className="d blue" style={{ fontSize: 22, letterSpacing: "-0.02em" }}>Latest message</span>
+              <span className="d" style={{ fontSize: 22, letterSpacing: "-0.02em" }}>Latest message</span>
               <span className="pill p-grad" style={{ minHeight: 36, fontSize: 13 }}>Watch now ↗</span>
             </div>
             <div className="frame r-video">

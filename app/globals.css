@@ -158,7 +158,8 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 /* ---------- hero (home): clean editorial grid. Headline left, latest message right,
    one full-width photo below. Nothing overlaps; every edge sits on the content grid. ---------- */
 .hero { container-type: inline-size; padding-top: clamp(24px, 4vw, 56px); }
-.hero .top { display: grid; grid-template-columns: 7fr 4fr; gap: 6cqw; align-items: end; }
+.hero .top { display: grid; grid-template-columns: 7fr 4fr; gap: 6cqw; align-items: start; }
+.hero .latest { margin-top: .6cqw; }
 .hero h1 { margin: 0 0 0 -0.04em; font-size: 11.6cqw; font-weight: 800; line-height: .86; letter-spacing: -0.03em; }
 .hero .bar { display: flex; flex-wrap: wrap; gap: 10px 36px; margin-top: 28px; }
 .hero .latest { text-decoration: none; display: block; padding-bottom: 6px; }
@@ -166,13 +167,14 @@ form .pill:hover { background: var(--primary-dark); color: #fff; }
 .hero .latest .t { margin-top: 12px; font: 700 15px/1.35 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .01em; }
 .hero .wide { margin-top: clamp(36px, 5cqw, 64px); }
 .hero .ph img { object-fit: cover; }
-@container (max-width: 760px) {
+@container (max-width: 940px) {
   .hero .top { grid-template-columns: 1fr; gap: 36px; }
-  .hero h1 { font-size: 18.5cqw; }
+  .hero h1 { font-size: clamp(60px, 18.5cqw, 150px); }
+  .hero .bar { max-width: 560px; }
   /* mobile: main action full width on top, the other two side by side */
+  /* mobile/tablet: the two actions side by side, equal width */
   .hero .bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
   .hero .bar .pill { min-height: 50px; padding: 0 12px; font-size: 13px; }
-  .hero .bar .p-grad { grid-column: 1 / -1; order: -1; }
 }
 
 /* ---------- photo marquee (the one moving element) ---------- */
