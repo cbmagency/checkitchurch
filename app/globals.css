@@ -1,9 +1,9 @@
 /* CBM Site Framework: editorial theme (paper, heavy type, one accent) */
 :root {
   --ink: #141414;
-  --primary: #C21F3A;      /* one accent: logo red, leaning pink */
-  --primary-dark: #9E1830;
-  --secondary: #C21F3A;
+  --primary: #0000B3;      /* one accent: CBM deep blue. Red lives in the logo only. */
+  --primary-dark: #00007A;
+  --secondary: #0000B3;
   --paper: #F3F0E9;
   --muted: #4A4A4F;
   --soft: #6B6B70;
@@ -59,21 +59,31 @@ main { flex: 1; }
 .lead { font-size: 18px; line-height: 1.6; color: #2E2E33; }
 .body { font-size: 16px; line-height: 1.6; color: var(--muted); }
 
-/* ---------- Check It buttons: rounded, led by a check-mark disc (the brand's own motif) ---------- */
+/* ---------- Check It buttons ----------
+   .pill        secondary: blue outline, fills blue on hover/tap
+   .pill.p-solid main action: solid blue, white text, white check disc
+   All buttons lift on hover/focus and press down on tap. */
 .pill {
   display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 4px 20px 4px 5px;
-  background: none; border: 1.5px solid var(--ink); border-radius: 999px; cursor: pointer; text-decoration: none;
-  font: 700 13px/1 var(--font-alt), sans-serif; letter-spacing: .03em; text-transform: uppercase; color: var(--ink); white-space: nowrap;
-  transition: background .2s, color .2s, border-color .2s;
+  background: transparent; border: 2px solid var(--primary); border-radius: 999px; cursor: pointer; text-decoration: none;
+  font: 700 13px/1 var(--font-alt), sans-serif; letter-spacing: .03em; text-transform: uppercase; color: var(--primary); white-space: nowrap;
+  transition: background .2s, color .2s, border-color .2s, transform .18s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
 }
 .pill::before {
   content: ""; flex: none; width: 2.6em; height: 2.6em; border-radius: 50%;
-  background: var(--primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 55% no-repeat; transition: transform .25s;
+  background: var(--primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 55% no-repeat; transition: transform .3s, background-color .2s;
 }
-.pill:hover { background: var(--ink); color: #fff; }
-.pill:hover::before { transform: rotate(-12deg) scale(1.06); }
-.p-white, .p-ghost { color: #fff; border-color: rgba(255,255,255,.7); }
-.p-white:hover, .p-ghost:hover { background: #fff; color: var(--ink); }
+.pill:hover, .pill:focus-visible { background: var(--primary); color: #fff; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0, 0, 179, .22); }
+.pill:hover::before, .pill:focus-visible::before { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='%230000B3' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 55% no-repeat; transform: rotate(-14deg) scale(1.08); }
+.pill:active { transform: translateY(0) scale(.97); box-shadow: 0 3px 8px rgba(0, 0, 179, .2); }
+.pill:focus-visible { outline: 3px solid rgba(0, 0, 179, .35); outline-offset: 3px; }
+.p-solid { background: var(--primary); color: #fff; }
+.p-solid::before { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='%230000B3' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 55% no-repeat; }
+.p-solid:hover, .p-solid:focus-visible { background: var(--primary-dark); border-color: var(--primary-dark); }
+/* on dark panels */
+.p-ghost { color: #fff; border-color: rgba(255,255,255,.75); }
+.p-ghost:hover, .p-ghost:focus-visible { background: #fff; color: var(--primary); border-color: #fff; }
 .btns { display: flex; flex-wrap: wrap; gap: 12px 14px; }
 /* check-mark bullet for lists */
 .check-li { list-style: none; padding: 0; }

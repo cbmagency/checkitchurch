@@ -15,8 +15,8 @@ export const site = {
 
   theme: {
     ink: "#141414", // headings + body text
-    primary: "#C21F3A", // one accent: logo red, leaning pink
-    secondary: "#C21F3A", // same red (one-accent system)
+    primary: "#0000B3", // one accent: CBM deep blue (red lives in the logo only)
+    secondary: "#0000B3", // same blue (one-accent system)
     bg: "#F3F2EE", // paper
   },
 

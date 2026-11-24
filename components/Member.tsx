@@ -169,7 +169,7 @@ export function MemberProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function JoinButton({ children = "Become a member", className = "pill", style }: { children?: ReactNode; className?: string; style?: React.CSSProperties }) {
+export function JoinButton({ children = "Become a member", className = "pill p-solid", style }: { children?: ReactNode; className?: string; style?: React.CSSProperties }) {
   const { open } = useContext(Ctx);
   return (
     <button type="button" className={className} style={style} onClick={open}>

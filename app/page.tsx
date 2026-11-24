@@ -16,13 +16,13 @@ export default function Home() {
             <div className="bar">
               <Link className="pill" href="/new-here">New here</Link>
               <Link className="pill" href="/watch">Watch live</Link>
-              <JoinButton className="pill">Become a member</JoinButton>
+              <JoinButton>Become a member</JoinButton>
             </div>
           </div>
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">
             <div className="row">
               <span className="d blue" style={{ fontSize: 22, letterSpacing: "-0.02em" }}>Latest message</span>
-              <span className="pill" style={{ minHeight: 30, fontSize: 13 }}>Watch now ↗</span>
+              <span className="pill p-solid" style={{ minHeight: 30, fontSize: 13 }}>Watch now ↗</span>
             </div>
             <div className="frame r-video">
               <Image src={ytThumb(latest.id)} alt="" fill quality={85} sizes="(max-width: 760px) 100vw, 420px" />
@@ -52,7 +52,7 @@ export default function Home() {
             <h3 className="d d-md">Community</h3>
             <p className="lead">Different islands. Different cities. One house. Prayer partners, sisters, brothers and a church that shows up for you.</p>
             <ul><li>Prayer every week</li><li>Outreach days</li><li>Women &amp; men of faith</li></ul>
-            <JoinButton className="pill">Become a member</JoinButton>
+            <JoinButton>Become a member</JoinButton>
           </div>
 
           <div className="collage" aria-hidden="true">
@@ -92,7 +92,7 @@ export default function Home() {
               For everyone genuinely committed to the ministry and connecting with us online, week after week.
             </p>
             <div className="btns" style={{ marginTop: 28 }}>
-              <JoinButton className="pill p-white">Register as a member</JoinButton>
+              <JoinButton>Register as a member</JoinButton>
               <Link className="pill p-ghost" href="/new-here#membership">Membership FAQ</Link>
             </div>
           </div>

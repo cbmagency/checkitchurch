@@ -14,7 +14,7 @@ export default function Watch() {
             <p className="label red">● Next live: Sunday 10 AM {site.contact.timezone}</p>
             <h1 className="d d-xl">Church goes<br />where you go.</h1>
           </div>
-          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a>{has(site.links.appStore) && <a className="pill" href="#app">Get the App</a>}</div>
+          <div className="btns"><a className="pill p-solid" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube Channel</a>{has(site.links.appStore) && <a className="pill" href="#app">Get the App</a>}</div>
         </div>
         <a href={site.links.youtube} target="_blank" rel="noreferrer" aria-label="Watch live" style={{ position: "relative", display: "block" }}>
           <Photo src="/images/preach.jpg" ratio="r-wide" pos="45% 35%" priority sizes="100vw" />
@@ -65,7 +65,7 @@ export default function Watch() {
             <p className="label" style={{ color: "rgba(255,255,255,.65)" }}>The Check It App</p>
             <h2 className="d d-lg">Take church<br /><span className="outline">in your pocket.</span></h2>
             <p style={{ margin: "16px 0 24px", fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,.88)" }}>Live services, past messages and Times of Refreshing, wherever you are.</p>
-            <div className="btns"><a className="pill p-white" href={site.links.appStore}>App Store</a><a className="pill p-ghost" href={site.links.googlePlay}>Google Play</a></div>
+            <div className="btns"><a className="pill p-solid" href={site.links.appStore}>App Store</a><a className="pill p-ghost" href={site.links.googlePlay}>Google Play</a></div>
           </div>
           <div style={{ position: "relative", minHeight: 320 }}>
             <Photo src="/images/street.jpg" pos="50% 50%" style={{ position: "absolute", inset: 0, aspectRatio: "auto", borderRadius: 0 }} />

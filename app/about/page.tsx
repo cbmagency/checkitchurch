@@ -21,8 +21,8 @@ export default function About() {
   return (
     <>
       <PageHero src="/images/joy.jpg" pos="50% 30%" label="About Check It" title={<>Word. Worship.<br /><span className="blue">Miracles.</span></>} sub="Proclaiming the Kingdom of God through the Word, worship and miracles.">
-        <a className="pill" href="#pastors">Meet Our Pastors</a>
-        <a className="pill" href="#prayer">Send a Prayer Request</a>
+        <a className="pill" href="#pastors">Meet our pastors</a>
+        <a className="pill p-solid" href="#prayer">Send a Prayer Request</a>
       </PageHero>
 
       {/* MISSION */}
