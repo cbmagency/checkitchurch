@@ -22,7 +22,7 @@ export default function Home() {
           <a className="latest" href={ytUrl(latest.id)} target="_blank" rel="noreferrer">
             <div className="row">
               <span className="d blue" style={{ fontSize: 22, letterSpacing: "-0.02em" }}>Latest message</span>
-              <span className="pill p-solid" style={{ minHeight: 30, fontSize: 13 }}>Watch now ↗</span>
+              <span className="pill p-grad" style={{ minHeight: 36, fontSize: 13 }}>Watch now ↗</span>
             </div>
             <div className="frame r-video">
               <Image src={ytThumb(latest.id)} alt="" fill quality={85} sizes="(max-width: 760px) 100vw, 420px" />

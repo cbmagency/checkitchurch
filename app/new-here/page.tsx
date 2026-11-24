@@ -10,7 +10,7 @@ export default function NewHere() {
   return (
     <>
       <PageHero src="/images/groupred.jpg" pos="50% 55%" label="New Here" title={<>First time?<br /><span className="blue">Welcome home.</span></>} sub="Wherever you are, there's a place for you. Here's how to join us live.">
-        <a className="pill p-solid" href="#visit">Join us live</a>
+        <a className="pill" href="#visit">Join us live</a>
         <a className="pill" href="#membership">Become a member</a>
       </PageHero>
 
@@ -40,7 +40,7 @@ export default function NewHere() {
             <h2 className="d d-md">Sundays · 10 AM</h2>
             <p className="body" style={{ marginTop: 12 }}>Every service streams live. Bring your Bible, your family and your expectation. All times {site.contact.timezone}.</p>
           </div>
-          <div className="btns"><a className="pill p-solid" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>{has(site.links.facebook) && <a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}<Link className="pill" href="/watch">Watch page</Link></div>
+          <div className="btns"><a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">YouTube</a>{has(site.links.facebook) && <a className="pill" href={site.links.facebook} target="_blank" rel="noreferrer">Facebook</a>}<Link className="pill" href="/watch">Watch page</Link></div>
         </div>
         <h2 className="d d-md" style={{ margin: "clamp(40px, 5vw, 64px) 0 20px" }}>Every <span className="blue">week.</span></h2>
         <ServiceCards />
@@ -70,7 +70,7 @@ export default function NewHere() {
             <p className="label" style={{ color: "rgba(255,255,255,.75)" }}>Serve</p>
             <h2 className="d d-lg">You were made for more than a seat.</h2>
             <p style={{ margin: "16px 0 22px", fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,.88)" }}>Pray, share the stream, show up on outreach days. There&apos;s a spot with your name on it.</p>
-            <JoinButton>I Want to Serve</JoinButton>
+            <JoinButton className="pill">I want to serve</JoinButton>
           </div>
         </div>
       </section>
