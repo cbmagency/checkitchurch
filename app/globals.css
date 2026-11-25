@@ -1,9 +1,9 @@
 /* CBM Site Framework: editorial theme (paper, heavy type, one accent) */
 :root {
   --ink: #141414;
-  --primary: #0000B3;      /* one accent: CBM deep blue. Red lives in the logo only. */
-  --primary-dark: #00007A;
-  --secondary: #0000B3;
+  --primary: #8E1B30;      /* one accent: cherry red (logo family, lifted for legibility) */
+  --primary-dark: #5E1120;
+  --secondary: #8E1B30;
   --paper: #F3F0E9;
   --muted: #4A4A4F;
   --soft: #6B6B70;
@@ -50,8 +50,8 @@ main { flex: 1; }
 .blue { color: var(--primary); }
 .red { color: var(--secondary); }
 /* accent word on dark panels: outlined, stays in palette */
-/* accent word on dark panels: light end of the CBM blue gradient */
-.outline { color: #8C8CF7; }
+/* accent word on dark panels: bright end of the cherry gradient */
+.outline { color: #B8263F; }
 .label {
   margin: 0 0 14px;
   font: 700 13px/1.2 var(--font-alt), sans-serif;
@@ -72,9 +72,9 @@ main { flex: 1; }
 }
 .pill:hover, .pill:focus-visible { background: #000; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.18); }
 .pill:active { transform: translateY(0) scale(.97); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
-.pill:focus-visible { outline: 3px solid rgba(0, 0, 179, .35); outline-offset: 3px; }
-.p-grad { background: linear-gradient(120deg, #000066 0%, #0000B3 50%, #0000EE 100%); background-size: 160% 100%; background-position: 0% 0; transition: transform .18s, box-shadow .2s, background-position .5s; }
-.p-grad:hover, .p-grad:focus-visible { background: linear-gradient(120deg, #000066 0%, #0000B3 50%, #0000EE 100%); background-size: 160% 100%; background-position: 100% 0; box-shadow: 0 10px 24px rgba(0, 0, 179, .3); }
+.pill:focus-visible { outline: 3px solid rgba(142, 27, 48, .35); outline-offset: 3px; }
+.p-grad { background: linear-gradient(120deg, #41101B 0%, #8E1B30 50%, #B8263F 100%); background-size: 160% 100%; background-position: 0% 0; transition: transform .18s, box-shadow .2s, background-position .5s; }
+.p-grad:hover, .p-grad:focus-visible { background: linear-gradient(120deg, #41101B 0%, #8E1B30 50%, #B8263F 100%); background-size: 160% 100%; background-position: 100% 0; box-shadow: 0 10px 24px rgba(142, 27, 48, .3); }
 /* on dark panels */
 .p-ghost { background: #fff; color: var(--ink); }
 .p-ghost:hover, .p-ghost:focus-visible { background: #fff; color: var(--ink); }
