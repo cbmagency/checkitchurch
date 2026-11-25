@@ -33,7 +33,7 @@ export const site = {
     kidsChannel: "https://www.youtube.com/@checkitkids-b1o",
     instagram: "https://www.instagram.com/checkitchurchministries/",
     tiktok: "https://www.tiktok.com/@checkitchurchministries",
-    facebook: "#",
+    facebook: "https://www.facebook.com/CheckItChurchMinistriesInternational/",
     give: "https://checkitcm.org/donate/",
     shop: "https://checkitcmshop.org/",
     appStore: "#",
