@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { site } from "@/site.config";
 import { has, PageHero, PhotoCard } from "@/components/Blocks";
+import { Copy } from "@/components/Copy";
 
 export const metadata: Metadata = { title: "Give", description: "Give to Check It Church Ministries online, by Zelle, Cash App, PayPal or phone. Shop the Check It collection." };
 
@@ -9,7 +10,7 @@ export default function Give() {
   return (
     <>
       <PageHero src="/images/team.jpg" pos="50% 30%" label="Give" title={<>Sow into<br /><span className="blue">the Kingdom.</span></>} sub="Every gift helps people encounter God, here and around the world.">
-        <a className="pill" href={site.links.give} target="_blank" rel="noreferrer">Give now</a>
+        <a className="pill p-grad" href="#ways">Give now</a>
         <a className="pill" href="#shop">Shop now</a>
       </PageHero>
 
@@ -17,26 +18,34 @@ export default function Give() {
       <section id="ways" className="wrap section">
         <h2 className="d d-lg" style={{ marginBottom: 8 }}>Give your way.</h2>
         <p className="lead" style={{ marginBottom: 28 }}>Pick what&apos;s easiest. It all goes to the same place.</p>
-        <div className="grid g3">
-          {site.giveWays.filter((w) => has(w.detail)).map((w) => {
-            const href = "href" in w ? w.href : undefined;
-            const inner = (<><span className="d d-sm">{w.name}</span><span className="body">{w.detail}</span>{href && <span className="d red" style={{ fontSize: 12, marginTop: "auto" }}>Give →</span>}</>);
-            return href ? (
-              <a key={w.name} className="card" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" style={{ padding: 26, display: "flex", flexDirection: "column", gap: 10, minHeight: 150, textDecoration: "none" }}>{inner}</a>
-            ) : (
-              <div key={w.name} className="card" style={{ padding: 26, display: "flex", flexDirection: "column", gap: 10, minHeight: 150 }}>{inner}</div>
-            );
-          })}
-        </div>
+        {[false, true].map((bank) => (
+          <div key={String(bank)} className={`grid ${bank ? "g2" : "g3"} ways`} style={{ marginTop: bank ? 16 : 0 }}>
+            {site.giveWays.filter((w) => has(w.detail) && !!w.lines === bank).map((w) => (
+              <div key={w.name} className="card way">
+                <span className="d d-sm">{w.name}</span>
+                <span className="body">{w.detail}</span>
+                {w.lines && (
+                  <div className="row2">
+                    {w.lines.map(([k, v]) => (
+                      <div key={k} className="kv"><span className="k">{k}</span>{k.toLowerCase().includes("number") ? <Copy value={v} label={k} /> : <span className="v" style={{ padding: "10px 0" }}>{v}</span>}</div>
+                    ))}
+                  </div>
+                )}
+                {w.copy && <Copy value={w.copy} />}
+                {w.href && <a className="pill" href={w.href} target={w.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" style={{ marginTop: "auto", alignSelf: "flex-start" }}>{w.cta ?? "Give"}</a>}
+              </div>
+            ))}
+          </div>
+        ))}
       </section>
 
       {/* WHERE IT GOES */}
       <section className="wrap section">
         <h2 className="d d-lg" style={{ marginBottom: 28 }}>Where your<br /><span className="blue">gift goes.</span></h2>
         <div className="grid g3">
-          <PhotoCard src="/images/worship.jpg" pos="50% 45%" label="Worship" title="Sundays and the stream, every week." href={site.links.give} cta="Give" />
-          <PhotoCard src="/images/notebooks.jpg" pos="50% 50%" label="Outreach" title="Showing up for the neighborhood." href={site.links.give} cta="Give" />
-          <PhotoCard src="/images/soloblue.jpg" pos="50% 30%" label="Ministry" title="Raising up leaders in the faith." href={site.links.give} cta="Give" />
+          <PhotoCard src="/images/worship.jpg" pos="50% 45%" label="Worship" title="Sundays and the stream, every week." href="#ways" cta="Give" />
+          <PhotoCard src="/images/notebooks.jpg" pos="50% 50%" label="Outreach" title="Showing up for the neighborhood." href="#ways" cta="Give" />
+          <PhotoCard src="/images/soloblue.jpg" pos="50% 30%" label="Ministry" title="Raising up leaders in the faith." href="#ways" cta="Give" />
         </div>
       </section>
 

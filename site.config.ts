@@ -34,7 +34,7 @@ export const site = {
     instagram: "https://www.instagram.com/checkitchurchministries/",
     tiktok: "https://www.tiktok.com/@checkitchurchministries",
     facebook: "https://www.facebook.com/CheckItChurchMinistriesInternational/",
-    give: "https://checkitcm.org/donate/",
+    give: "/give#ways",
     shop: "https://checkitcmshop.org/",
     appStore: "#",
     googlePlay: "#",
@@ -115,14 +115,16 @@ export const site = {
   //   The Church: We're called to be a family that worships, grows and serves together.
   beliefs: [] as { q: string; a: string }[],
 
+  // Ways to give (Give page). Items with a [placeholder] detail stay hidden.
+  // copy: a value visitors can tap to copy (account numbers, cashtags).
   giveWays: [
-    { name: "Online", detail: "Card or bank, one-time or recurring.", href: "https://checkitcm.org/donate/" },
+    { name: "Cash App", detail: "Check It Church Ministries Intl Inc", copy: "$CheckItCm", href: "https://cash.app/$CheckItCm", cta: "Open Cash App" },
+    { name: "PayPal", detail: "Give securely with PayPal.", href: "https://www.paypal.com/paypalme/Igbeibi", cta: "Open PayPal" },
     { name: "Zelle", detail: "[Zelle email or phone]" },
-    { name: "Cash App", detail: "[$Cashtag]" },
-    { name: "PayPal", detail: "[PayPal link]" },
-    { name: "By phone", detail: "(855) 812-4325", href: "tel:+18558124325" },
-    { name: "Bank transfer", detail: "St. Lucia and Jamaica. Details on request." },
-  ],
+    { name: "By phone", detail: "Call and we'll walk you through it.", copy: "(855) 812-4325", href: "tel:+18558124325", cta: "Call now" },
+    { name: "Bank transfer · St. Lucia", detail: "Bank of St Lucia", lines: [["Account name", "Leah Popo"], ["Account number", "321115108"]] },
+    { name: "Bank transfer · Jamaica", detail: "JN Bank, 2 Market St, Montego Bay. Tithe and offering.", lines: [["Account name", "Natasha Powell"], ["Account number", "10710757"]] },
+  ] as { name: string; detail: string; copy?: string; href?: string; cta?: string; lines?: [string, string][] }[],
 } as const;
 
 export type Site = typeof site;

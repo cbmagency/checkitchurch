@@ -275,3 +275,13 @@ details p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--mu
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- give: ways cards ---------- */
+.way { padding: 26px; display: flex; flex-direction: column; gap: 10px; min-height: 170px; }
+.way .kv { display: flex; flex-direction: column; gap: 4px; }
+.way .k { font: 700 11px/1 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--soft, #666); }
+.way .v { font-weight: 600; }
+.copy { display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1.5px dashed rgba(0,0,0,.25); border-radius: 10px; background: #fff; cursor: pointer; font: inherit; color: var(--ink); width: 100%; text-align: left; transition: border-color .2s; }
+.copy:hover { border-color: var(--primary); }
+.copy .v { font: 700 16px/1.2 var(--font-body), sans-serif; letter-spacing: .02em; }
+.copy .t { font: 700 11px/1 var(--font-alt), sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--primary); }
