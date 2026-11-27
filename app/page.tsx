@@ -78,8 +78,8 @@ export default function Home() {
       {/* RECENT SERMONS */}
       <section className="wrap section">
         <div className="head">
-          <h2 className="d d-lg">Watch recent<br /><span className="blue">sermons.</span></h2>
-          <a className="pill" href={site.links.youtube} target="_blank" rel="noreferrer">All sermons</a>
+          <h2 className="d d-lg">Recent live<br /><span className="blue">services.</span></h2>
+          <a className="pill" href={site.links.streams} target="_blank" rel="noreferrer">All live services</a>
         </div>
         <SermonGrid count={4} />
       </section>

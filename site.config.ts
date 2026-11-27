@@ -30,6 +30,7 @@ export const site = {
 
   links: {
     youtube: "https://www.youtube.com/@check-itchurch",
+    streams: "https://www.youtube.com/@check-itchurch/streams",
     kidsChannel: "https://www.youtube.com/@checkitkids-b1o",
     instagram: "https://www.instagram.com/checkitchurchministries/",
     tiktok: "https://www.tiktok.com/@checkitchurchministries",
@@ -97,14 +98,15 @@ export const site = {
 
   // Recent sermons row. id = the YouTube video id (the part after watch?v=).
   sermons: [
-    { id: "csoG4316mRo", title: "Prayer for Financial Breakthrough", tag: "Prayer" },
-    { id: "hquM-zhR2i8", title: "My Spiritual Channels Are Open", tag: "Prayer" },
-    { id: "iFTKhgMRRvI", title: "I'm Making Progress", tag: "Worship" },
-    { id: "Ts7VgX_jVOA", title: "It's Turning Around for My Good", tag: "Worship" },
-    { id: "eLY7rKpS_Zc", title: "I've Got Joy", tag: "Worship" },
-    { id: "uxJs6putyUQ", title: "Delayed But Not Denied", tag: "Testimony" },
-    { id: "PKV1xlCfn_U", title: "Your Son Won't Survive", tag: "Testimony" },
-    { id: "uSRknUHtExw", title: "Then Something Impossible Happened", tag: "Testimony" },
+    // Live services from youtube.com/@check-itchurch/streams (newest first). First one = "Latest message".
+    { id: "RdfX0AowD8Y", title: "Festival of Praise 2026", tag: "Live service" },
+    { id: "jnwyKsEnKjE", title: "Midweek Bible Study", tag: "Bible study" },
+    { id: "HtKFo_ajyBo", title: "Prophetic Healing & Deliverance Service", tag: "Healing & deliverance" },
+    { id: "iW7ZD2qqOVM", title: "3 Important Things You Must Never Miss in Life", tag: "Live service" },
+    { id: "5IN76yc18jo", title: "Friday Night Prayer", tag: "Prayer" },
+    { id: "B5nvtR1e_zw", title: "Don't Be a Talebearer", tag: "Live service" },
+    { id: "UDWyqvsc1s4", title: "The Help You're Missing", tag: "Times of Refreshing" },
+    { id: "VmSBcXVMRz8", title: "Evaluate Your Friendships", tag: "Live service" },
   ],
 
   // Statement of faith (About page). Section stays hidden until this has entries.
